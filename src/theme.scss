@@ -55,16 +55,12 @@ $shadow: 1px 1px 2px rgba(0, 0, 0, .5);
 
 body {
   @include font;
-  background-color: $background;
+  background: url("./assets/background.jpg") center top no-repeat, $background;
 }
 
 .header {
   height: $headerHeight;
   width: auto;
-  background-image: url("./assets/pattern1.png"),
-  linear-gradient(45deg, $headerColor1, $headerColor2);
-  background-repeat: no-repeat;
-  background-position-x: center;
 
   .header-menu {
     position: relative;
@@ -80,11 +76,12 @@ body {
 }
 
 .list-menu-float {
-  position: absolute;
+  position: relative;
   width: auto;
   border: none;
-  top: $headerHeight - 30px;
   left: 10px;
+  text-align: left;
+  margin-top: -27px;
 
   form {
     display: inline-block;
