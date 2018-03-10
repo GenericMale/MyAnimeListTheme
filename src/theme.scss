@@ -65,12 +65,12 @@ body {
   linear-gradient(45deg, $headerColor1, $headerColor2);
   background-repeat: no-repeat;
   background-position-x: center;
-  z-index: 1;
 
   .header-menu {
     position: relative;
     top: 10px;
     right: 10px;
+    z-index: 1;
   }
 
   .header-title {
