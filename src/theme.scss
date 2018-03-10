@@ -1,0 +1,656 @@
+@import url(https://malcat-gen.appspot.com/series?preset=dataimagelink);
+
+$minWidth: 820px;
+$headerHeight: 150px;
+
+$iconSize: 14px;
+$iconSizeL: 28px;
+
+$fontSize: 13px;
+$fontSizeL: 16px;
+$fontSizeXL: 18px;
+
+$background: #272B35;
+$statusBackground: #393F4C;
+
+$headerColor1: #155799;
+$headerColor2: #159957;
+
+$fontColor: white;
+$fontColor2: #ccc;
+$fontColor3: #777;
+
+$scoreColor: #D21502;
+
+$allColor: #800080;
+$watchingColor: #2db039;
+$completedColor: #26448f;
+$onHoldColor: #f1c83e;
+$droppedColor: #a12f31;
+$plannedColor: #c3c3c3;
+
+$shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+
+@mixin fa($size: $iconSize) {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: $size;
+  line-height: 1;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
+}
+
+@mixin font($size: $fontSize) {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: $size;
+  line-height: 1;
+  font-family: lucida grande, tahoma, verdana, arial, sans-serif;
+}
+
+body {
+  @include font;
+  background-color: $background;
+}
+
+.header {
+  height: $headerHeight;
+  width: auto;
+  background-image: url("./assets/pattern1.png"),
+  linear-gradient(45deg, $headerColor1, $headerColor2);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  z-index: 1;
+
+  .header-menu {
+    position: relative;
+    top: 10px;
+    right: 10px;
+  }
+
+  .header-title {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+.list-menu-float {
+  position: absolute;
+  width: auto;
+  border: none;
+  top: $headerHeight - 30px;
+  left: 10px;
+
+  form {
+    display: inline-block;
+    margin-right: -3px;
+  }
+
+  .icon-menu {
+    background-color: transparent;
+    display: inline-block;
+    width: $iconSize;
+    height: $iconSize;
+    margin-right: 10px;
+
+    &.profile {
+      width: 25px;
+      height: 25px;
+    }
+
+    &:not(.profile):hover {
+      background-color: transparent;
+      width: $iconSize;
+    }
+
+    .text {
+      @include font;
+      left: 0;
+      top: 0;
+      margin-top: -18px;
+      height: 18px;
+      text-align: left;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    svg.icon {
+      fill: $fontColor;
+      width: $iconSize;
+      height: $iconSize;
+      top: 0 !important;
+      left: 0 !important;
+    }
+
+    &.setting:hover {
+      .text {
+        width: 180px;
+        height: 18px;
+        text-decoration: none;
+
+        .link-list-setting, .link-style-setting {
+          background-color: transparent;
+          line-height: $fontSize;
+          height: auto;
+          border: none;
+          display: inline-block;
+          position: relative;
+          top: 0;
+          width: auto;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .link-list-setting {
+          padding-right: 5px;
+        }
+
+        .link-style-setting {
+          padding-left: 10px;
+          border-left: $fontColor 1px solid;
+        }
+      }
+    }
+  }
+}
+
+.list-container {
+  width: auto;
+  min-width: $minWidth;
+  background-color: transparent;
+  border: none;
+
+  .cover-block {
+    width: 100%;
+    top: $headerHeight * -1;
+    position: absolute;
+
+    #cover-image-container {
+      padding-top: 0;
+      width: auto;
+      height: $headerHeight;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .btn-list-setting {
+        display: none;
+      }
+
+      #cover-image {
+        max-width: none;
+        max-height: $headerHeight;
+      }
+    }
+  }
+
+  .status-menu-container {
+    width: 100%;
+    z-index: 2;
+    background-color: $statusBackground;
+    border: none;
+    height: 41px;
+    box-shadow: $shadow;
+    min-width: $minWidth;
+
+    .status-menu {
+      height: 100%;
+      border-spacing: 0;
+
+      .status-button {
+        @include font($fontSizeXL);
+        padding: 0 20px;
+        color: $fontColor2;
+
+        &.on {
+          font-weight: bold;
+        }
+
+        &:after {
+          border-radius: 2px;
+        }
+
+        &.all_anime:after {
+          background-color: $allColor;
+        }
+
+        &.watching:after {
+          background-color: $watchingColor;
+        }
+
+        &.completed:after {
+          background-color: $completedColor;
+        }
+
+        &.onhold:after {
+          background-color: $onHoldColor;
+        }
+
+        &.dropped:after {
+          background-color: $droppedColor;
+        }
+
+        &.plantowatch:after {
+          background-color: $plannedColor;
+        }
+      }
+    }
+
+    .search-container {
+      margin-top: -55px;
+      right: 58px;
+      z-index: 1;
+
+      #search-box {
+        margin-top: 8px;
+
+        &.open {
+          background: transparent;
+        }
+
+        input {
+          @include font;
+          background: transparent;
+          border: none;
+          border-bottom: $fontColor 1px solid;
+          outline: none;
+          caret-color: $fontColor;
+          color: $fontColor;
+          height: auto;
+        }
+      }
+
+      #search-button {
+        color: $fontColor;
+        font-size: $iconSize;
+      }
+    }
+  }
+
+  .list-block {
+    margin-top: 3px;
+    min-height: 0;
+  }
+
+  .list-unit {
+    width: 100%;
+
+    .list-status-title {
+      height: auto;
+      margin-top: -84px;
+      position: absolute;
+      right: 0;
+      font-size: 0;
+      z-index: 1;
+
+      .stats {
+        line-height: normal;
+
+        i {
+          font-size: $iconSize;
+          color: $fontColor;
+        }
+      }
+
+      .text {
+        display: none;
+      }
+    }
+
+    .list-stats {
+      @include font;
+      background-color: transparent;
+      width: auto;
+      position: absolute;
+      margin-top: -105px;
+      right: 10px;
+    }
+
+    .list-table {
+      display: inline-block;
+      width: 100%;
+      border: transparent;
+      text-align: center;
+
+      tbody:first-child {
+        margin-top: -70px;
+        height: 70px;
+        display: inline-block;
+        width: 100%;
+
+        .list-table-header {
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          font-size: 0;
+          z-index: 1;
+
+          &:before {
+            @include fa;
+            color: $fontColor;
+            content: "\f0dc";
+            position: absolute;
+            left: 0;
+            top: 10px;
+          }
+
+          .header-title {
+            height: auto;
+            width: auto;
+            padding: 10px 0;
+            background: none;
+            border-bottom: none;
+
+            .sort-icon {
+              color: $fontColor;
+            }
+
+            .link {
+              padding: 0 10px;
+              border-left: $fontColor 1px solid;
+              color: $fontColor;
+              font-weight: normal;
+              font-size: $fontSize;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            &.title .link {
+              border-left: none;
+              padding-left: 20px;
+            }
+
+            &.image {
+              display: none;
+            }
+          }
+        }
+      }
+
+      > tbody:nth-of-type(2n+1) {
+        background-color: transparent;
+      }
+
+      .list-item {
+        display: inline-block;
+        position: relative;
+        width: 225px;
+        height: 320px;
+        margin: 3px;
+        box-shadow: $shadow;
+
+        &:hover {
+          /* increase size of image on hover (gets blurry)
+          width: $imageWidth + $imagePadding * 2;
+          height: $imageHeight + $imagePadding * 2;
+          margin: 0;
+          */
+
+          .list-table-data .data.title .add-edit-more,
+          .list-table-data .data.progress .icon-add-episode {
+            display: block;
+          }
+        }
+
+        .list-table-data {
+
+          .data {
+            position: absolute;
+            padding: 0;
+            border-style: none;
+
+            &.status {
+              width: 70px;
+              height: 20px;
+              z-index: 1;
+              border-bottom-right-radius: 10px;
+
+              &:before {
+                @include fa;
+                position: absolute;
+                color: $fontColor;
+                top: 3px;
+                left: 3px;
+              }
+
+              &.watching {
+                background-color: $watchingColor;
+
+                &:before {
+                  content: "\f144";
+                }
+              }
+
+              &.plantowatch {
+                background-color: $plannedColor;
+
+                &:before {
+                  content: "\f08d";
+                }
+              }
+
+              &.completed {
+                background-color: $completedColor;
+
+                &:before {
+                  content: "\f058";
+                }
+              }
+
+              &.onhold {
+                background-color: $onHoldColor;
+
+                &:before {
+                  content: "\f28b";
+                }
+              }
+
+              &.dropped {
+                background-color: $droppedColor;
+
+                &:before {
+                  content: "\f1f8";
+                }
+              }
+            }
+
+            &.number {
+              display: none;
+            }
+
+            &.image {
+              width: 100%;
+              height: 100%;
+
+              .link {
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                &:before {
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                  position: absolute;
+                  content: '';
+                  background: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.9));
+                }
+
+                .image {
+                  display: none;
+                }
+              }
+            }
+
+            &.title {
+              bottom: 30px;
+              left: 5px;
+              right: 5px;
+              text-align: center;
+
+              .link {
+                color: white;
+                @include font($fontSizeL);
+                text-shadow: rgba(0, 0, 0, .8) 1px 1px 0;
+              }
+
+              .add-edit-more {
+                display: none;
+                font-size: 0;
+                position: absolute;
+
+                .edit {
+                  background-color: rgba(0, 0, 0, 0.6);
+                  border-radius: 25px;
+                  position: absolute;
+                  margin-top: -150px;
+                  margin-left: 80px;
+                  width: 50px;
+                  height: 50px;
+
+                  a {
+                    left: 13px;
+                    position: absolute;
+                    top: 12px;
+
+                    &:hover {
+                      text-decoration: none;
+                    }
+
+                    &:before {
+                      @include fa($iconSizeL);
+                      color: $fontColor;
+                      content: "\f044";
+                    }
+
+                  }
+                }
+              }
+
+              .icon-watch {
+                display: none;
+              }
+            }
+
+            &.score {
+              z-index: 1;
+              right: 0;
+              top: 0;
+
+              &:before {
+                @include fa($iconSizeL);
+                position: absolute;
+                color: $scoreColor;
+                content: "\f004";
+                z-index: -1;
+                right: 2px;
+                top: 0;
+              }
+
+              .link {
+                @include font;
+                color: $fontColor;
+                top: 6px;
+                right: 6px;
+                width: 20px;
+                position: absolute;
+              }
+            }
+
+            &.type {
+              @include font;
+              color: $fontColor2;
+              bottom: 5px;
+              left: 5px;
+            }
+
+            &.progress {
+              @include font;
+              z-index: 1;
+              color: $fontColor;
+              width: 50px;
+              height: 16px;
+              text-align: center;
+              left: 19px;
+              top: 3px;
+
+              a {
+                color: $fontColor;
+                margin-right: -4px;
+              }
+
+              span {
+                margin-left: -4px;
+              }
+
+              .icon-add-episode {
+                display: none;
+                position: absolute;
+                right: -12px;
+                top: 0;
+
+                .fa {
+                  font-size: $iconSize;
+                }
+              }
+            }
+
+            &.rated {
+              @include font;
+              color: $fontColor2;
+              bottom: 5px;
+              right: 5px;
+            }
+
+            &.season {
+              bottom: 5px;
+              right: 5px;
+              left: 5px;
+              text-align: center;
+
+              a {
+                @include font;
+                color: $fontColor2;
+              }
+            }
+
+            &.tags, &.started, &.finished, &.days, &.storage, &.priority,
+            &.airing-started, &.airing-finished,
+            &.studio, &.licensor {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer-block {
+  background-color: transparent;
+  padding: 0 0 10px 0;
+}
+
+#copyright {
+  @include font;
+  color: $fontColor3;
+}
+
+#loading-spinner {
+  color: $fontColor3;
+}

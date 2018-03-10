@@ -1,0 +1,22 @@
+{
+  "name": "myanimelist-theme",
+  "version": "1.0.0",
+  "description": "Custom Theme for MyAnimeList",
+  "main": "theme.scss",
+  "scripts": {
+    "build": "node-sass --output-style compressed -o dist src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GenericMale/MyAnimeListTheme.git"
+  },
+  "author": "GenericMale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GenericMale/MyAnimeListTheme/issues"
+  },
+  "homepage": "https://github.com/GenericMale/MyAnimeListTheme#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
