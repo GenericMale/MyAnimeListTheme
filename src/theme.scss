@@ -101,6 +101,7 @@ body {
     &.profile {
       width: 25px;
       height: 25px;
+      box-shadow: $shadow;
     }
 
     &:not(.profile):hover {
