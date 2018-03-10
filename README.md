@@ -13,7 +13,7 @@ This is my custom theme for MyAnimeList (MAL).
 * Support for custom headers using the MAL background selector
 * Uses MAL Modern Theme
 * All controls still in place and fully functional (with the exception of the `More` button)
-* Shows Title, Status (Watched, Planned etc), Episodes, Big Images, User Score, Season, Type (TV, Movie etc), Rating, (PG-13, R etc)
+* Shows Title, Status (Watched, Planned etc), Episodes, Big Images, User Score, Season, Type (TV, Movie etc), Rating (PG-13, R etc)
 * Additionally supports sorting by Aired Dates, Watched Dates, Storage, Priority
 
 ## Installation
