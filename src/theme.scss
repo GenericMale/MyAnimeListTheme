@@ -659,11 +659,12 @@ body {
               .icon-add-episode {
                 display: none;
                 position: absolute;
-                right: -12px;
+                right: -15px;
                 top: 0;
 
                 .fa {
                   font-size: $iconSize;
+                  text-shadow: $textShadow;
                 }
               }
             }
