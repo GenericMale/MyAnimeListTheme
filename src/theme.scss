@@ -27,7 +27,8 @@ $onHoldColor: #f1c83e;
 $droppedColor: #a12f31;
 $plannedColor: #c3c3c3;
 
-$shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+$shadow: rgba(0, 0, 0, .5) 1px 1px 2px;
+$textShadow: rgba(0, 0, 0, .8) 1px 1px 0;
 
 @mixin fa($size: $iconSize) {
   display: inline-block;
@@ -55,7 +56,7 @@ $shadow: 1px 1px 2px rgba(0, 0, 0, .5);
 
 body {
   @include font;
-  background: url("./assets/background.jpg") center top no-repeat, $background;
+  background: url("https://genericmale.github.io/MyAnimeListTheme/assets/background.jpg") center top no-repeat, $background;
 }
 
 .header {
@@ -281,6 +282,10 @@ body {
       #search-button {
         color: $fontColor;
         font-size: $iconSize;
+
+        i {
+          text-shadow: $textShadow;
+        }
       }
     }
   }
@@ -311,6 +316,7 @@ body {
           i {
             font-size: $iconSize;
             color: $fontColor;
+            text-shadow: $textShadow;
           }
         }
 
@@ -352,6 +358,7 @@ body {
           color: $fontColor;
           content: "\f0dc";
           cursor: pointer;
+          text-shadow: $textShadow;
         }
 
         .list-table-header {
@@ -521,7 +528,7 @@ body {
               .link {
                 color: white;
                 @include font($fontSizeL);
-                text-shadow: rgba(0, 0, 0, .8) 1px 1px 0;
+                text-shadow: $textShadow;
               }
 
               .add-edit-more {
