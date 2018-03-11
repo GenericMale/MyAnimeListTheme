@@ -89,15 +89,70 @@ body {
     .btn-menu {
       font-size: $font-size-l;
 
-      .fa {
-        display: none;
+      #header-menu-button {
+        font-weight: normal;
+        cursor: unset;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        .fa {
+          display: none;
+        }
       }
+
     }
 
     .header-info {
       font-size: $font-size;
       margin-top: $item-padding;
-      margin-right: 0;
+      margin-right: $icon-size + $item-padding;
+
+      a:last-child {
+        font-size: 0;
+
+        .fa {
+          font-size: $icon-size;
+        }
+      }
+    }
+
+    .list-menu {
+      display: block !important;
+      top: $font-size-l + $item-padding;
+      right: 0;
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+
+      .icon-menu {
+        width: $icon-size;
+        height: $icon-size;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        svg.icon,
+        .text {
+          display: none;
+        }
+
+        &.manga-list:before {
+          @include fa;
+          content: '\f02d';
+          color: $font-color;
+        }
+
+        &.anime-list:before {
+          @include fa;
+          content: '\f008';
+          color: $font-color;
+        }
+      }
     }
   }
 
@@ -167,31 +222,31 @@ body {
       }
     }
 
-    &.quick-add:before  {
+    &.quick-add:before {
       content: '\f0fe';
     }
 
-    &.anime-list:before  {
+    &.anime-list:before {
       content: '\f008';
     }
 
-    &.manga-list:before  {
+    &.manga-list:before {
       content: '\f02d';
     }
 
-    &.history:before  {
+    &.history:before {
       content: '\f1da';
     }
 
-    &.export:before  {
+    &.export:before {
       content: '\f15b';
     }
 
-    &.logout:before  {
+    &.logout:before {
       content: '\f08b';
     }
 
-    &.setting:before  {
+    &.setting:before {
       content: '\f013';
     }
 
