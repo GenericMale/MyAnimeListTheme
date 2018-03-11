@@ -8,27 +8,25 @@ $fontSize: 13px;
 $fontSizeL: 16px;
 $fontSizeXL: 18px;
 
-$background: #272B35;
-$statusBackground: #393F4C;
+$background: hsl(240, 15%, 20%);
+$statusBackground: lighten($background, 10%);
 
-$headerColor1: #155799;
-$headerColor2: #159957;
+$fontColor: hsl(0, 0%, 100%);
+$fontColor2: darken($fontColor, 20%);
+$fontColor3: darken($fontColor, 50%);
 
-$fontColor: white;
-$fontColor2: #ccc;
-$fontColor3: #777;
+$hueDegrees: 360/6;
+$droppedColor: hsl(0, 60%, 40%);
+$onHoldColor: adjust-hue($droppedColor, $hueDegrees);
+$watchingColor: adjust-hue($droppedColor, $hueDegrees * 2);
+$plannedColor: adjust-hue($droppedColor, $hueDegrees * 3);
+$completedColor: adjust-hue($droppedColor, $hueDegrees * 4);
+$allColor: adjust-hue($droppedColor, $hueDegrees * 5);
 
-$scoreColor: #D21502;
+$scoreColor: saturate($droppedColor, 20%);
 
-$allColor: #800080;
-$watchingColor: #2db039;
-$completedColor: #26448f;
-$onHoldColor: #f1c83e;
-$droppedColor: #a12f31;
-$plannedColor: #c3c3c3;
-
-$shadow: rgba(0, 0, 0, .5) 1px 1px 2px;
-$textShadow: rgba(0, 0, 0, .8) 1px 1px 0;
+$shadow: rgba(black, 0.5) 1px 1px 2px;
+$textShadow: rgba(black, 0.8) 1px 1px 0;
 
 @mixin fa($size: $iconSize) {
   display: inline-block;
@@ -68,7 +66,10 @@ body {
     top: 10px;
     right: 10px;
     z-index: 1;
-    text-shadow: $textShadow;
+
+    .other {
+      top: 10px;
+    }
   }
 
   .header-title {
@@ -114,7 +115,6 @@ body {
       height: 18px;
       text-align: left;
       padding-top: 10px;
-      text-shadow: $textShadow;
 
       &:hover {
         text-decoration: underline;
@@ -309,7 +309,6 @@ body {
           caret-color: $fontColor;
           color: $fontColor;
           height: auto;
-          text-shadow: $textShadow;
         }
       }
 
@@ -369,7 +368,6 @@ body {
       margin-top: -105px;
       right: 10px;
       z-index: -1;
-      text-shadow: $textShadow;
     }
 
     .list-table {
@@ -424,7 +422,6 @@ body {
               color: $fontColor;
               font-weight: normal;
               font-size: $fontSize;
-              text-shadow: $textShadow;
 
               &:hover {
                 text-decoration: underline;
