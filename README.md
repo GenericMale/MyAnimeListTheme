@@ -66,7 +66,6 @@ To compile the project follow these steps:
 ## TODO
 
 * Test manga view
-* Improve styling of score and status
 * Style filter popup
 * Style anime/manga dropdown
 * Light theme and other theme colors
