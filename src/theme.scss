@@ -1,35 +1,35 @@
-$minWidth: 820px;
-$headerHeight: 150px;
+$min-width: 820px;
+$header-height: 150px;
 
-$iconSize: 14px;
-$iconSizeL: 28px;
+$icon-size: 14px;
+$icon-size-l: 28px;
 
-$fontSize: 13px;
-$fontSizeL: 16px;
-$fontSizeXL: 18px;
+$font-size: 13px;
+$font-size-m: 16px;
+$font-size-l: 18px;
 
 $background: hsl(240, 15%, 20%);
-$statusBackground: lighten($background, 10%);
+$status-background: lighten($background, 10%);
 
-$fontColor: hsl(0, 0%, 100%);
-$fontColor2: darken($fontColor, 20%);
-$fontColor3: darken($fontColor, 50%);
+$font-color: hsl(0, 0%, 100%);
+$font-color-2: darken($font-color, 20%);
+$font-color-3: darken($font-color, 50%);
 
-$hueDegrees: 360/6;
-$droppedColor: hsl(0, 50%, 50%);
-$onHoldColor: adjust-hue($droppedColor, $hueDegrees);
-$watchingColor: adjust-hue($droppedColor, $hueDegrees * 2);
-$plannedColor: adjust-hue($droppedColor, $hueDegrees * 3);
-$completedColor: adjust-hue($droppedColor, $hueDegrees * 4);
-$allColor: adjust-hue($droppedColor, $hueDegrees * 5);
+$hue-offset: 360/6;
+$dropped-color: hsl(0, 50%, 50%);
+$on-hold-color: adjust-hue($dropped-color, $hue-offset);
+$watching-color: adjust-hue($dropped-color, $hue-offset * 2);
+$planned-color: adjust-hue($dropped-color, $hue-offset * 3);
+$completed-color: adjust-hue($dropped-color, $hue-offset * 4);
+$all-color: adjust-hue($dropped-color, $hue-offset * 5);
 
-$scoreColor: saturate($droppedColor, 25%);
-$statusShadow: linear-gradient(125deg, transparent 60%, rgba(black, 0.5));
+$score-color: saturate($dropped-color, 25%);
 
-$shadow: rgba(black, 0.5) 1px 1px 2px;
-$textShadow: rgba(black, 0.8) 1px 1px 0;
+$status-shadow: linear-gradient(125deg, transparent 60%, rgba(#000, 0.5));
+$box-shadow: rgba(#000, 0.5) 1px 1px 2px;
+$text-shadow: rgba(#000, 0.8) 1px 1px 0;
 
-@mixin fa($size: $iconSize) {
+@mixin fa($size: $icon-size) {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -43,7 +43,7 @@ $textShadow: rgba(black, 0.8) 1px 1px 0;
   text-rendering: auto;
 }
 
-@mixin font($size: $fontSize) {
+@mixin font($size: $font-size) {
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -55,11 +55,11 @@ $textShadow: rgba(black, 0.8) 1px 1px 0;
 
 body {
   @include font;
-  background: url("./assets/background.jpg") center top no-repeat, $background;
+  background: url('./assets/background.jpg') center top no-repeat, $background;
 }
 
 .header {
-  height: $headerHeight;
+  height: $header-height;
   width: auto;
 
   .header-menu {
@@ -83,7 +83,7 @@ body {
 .list-menu-float {
   position: relative;
   width: auto;
-  border: none;
+  border: 0;
   left: 10px;
   text-align: left;
   margin-top: -17px;
@@ -98,14 +98,14 @@ body {
   .icon-menu {
     background-color: transparent;
     display: inline-block;
-    width: $iconSize;
-    height: $iconSize;
+    width: $icon-size;
+    height: $icon-size;
     margin-right: 10px;
-    color: $fontColor;
+    color: $font-color;
 
     &:not(.profile):hover {
       background-color: transparent;
-      width: $iconSize;
+      width: $icon-size;
     }
 
     .text {
@@ -128,42 +128,43 @@ body {
 
     &:before {
       @include fa;
-      text-shadow: $textShadow;
+      text-shadow: $text-shadow;
     }
 
     &.profile {
       background-image: none !important;
+
       &:before {
-        content: "\f007";
+        content: '\f007';
       }
     }
 
     &.quick-add:before  {
-      content: "\f0fe";
+      content: '\f0fe';
     }
 
     &.anime-list:before  {
-      content: "\f008";
+      content: '\f008';
     }
 
     &.manga-list:before  {
-      content: "\f02d";
+      content: '\f02d';
     }
 
     &.history:before  {
-      content: "\f1da";
+      content: '\f1da';
     }
 
     &.export:before  {
-      content: "\f15b";
+      content: '\f15b';
     }
 
     &.logout:before  {
-      content: "\f08b";
+      content: '\f08b';
     }
 
     &.setting:before  {
-      content: "\f013";
+      content: '\f013';
     }
 
     &.setting {
@@ -179,11 +180,12 @@ body {
         text-decoration: none;
         display: block;
 
-        .link-list-setting, .link-style-setting {
+        .link-list-setting,
+        .link-style-setting {
           background-color: transparent;
-          line-height: $fontSize;
+          line-height: $font-size;
           height: auto;
-          border: none;
+          border: 0;
           display: inline-block;
           position: relative;
           top: 0;
@@ -200,7 +202,7 @@ body {
 
         .link-style-setting {
           padding-left: 10px;
-          border-left: $fontColor 1px solid;
+          border-left: $font-color 1px solid;
         }
       }
     }
@@ -209,19 +211,19 @@ body {
 
 .list-container {
   width: auto;
-  min-width: $minWidth;
+  min-width: $min-width;
   background-color: transparent;
-  border: none;
+  border: 0;
 
   .cover-block {
     width: 100%;
-    top: $headerHeight * -1;
+    top: $header-height * -1;
     position: absolute;
 
     #cover-image-container {
       padding-top: 0;
       width: auto;
-      height: $headerHeight;
+      height: $header-height;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -232,7 +234,7 @@ body {
 
       #cover-image {
         max-width: none;
-        max-height: $headerHeight;
+        max-height: $header-height;
       }
     }
   }
@@ -240,20 +242,20 @@ body {
   .status-menu-container {
     width: 100%;
     z-index: 2;
-    background-color: $statusBackground;
-    border: none;
+    background-color: $status-background;
+    border: 0;
     height: 41px;
-    box-shadow: $shadow;
-    min-width: $minWidth;
+    box-shadow: $box-shadow;
+    min-width: $min-width;
 
     .status-menu {
       height: 100%;
       border-spacing: 0;
 
       .status-button {
-        @include font($fontSizeXL);
+        @include font($font-size-l);
         padding: 0 20px;
-        color: $fontColor2;
+        color: $font-color-2;
 
         &.on {
           font-weight: bold;
@@ -264,27 +266,27 @@ body {
         }
 
         &.all_anime:after {
-          background-color: $allColor;
+          background-color: $all-color;
         }
 
         &.watching:after {
-          background-color: $watchingColor;
+          background-color: $watching-color;
         }
 
         &.completed:after {
-          background-color: $completedColor;
+          background-color: $completed-color;
         }
 
         &.onhold:after {
-          background-color: $onHoldColor;
+          background-color: $on-hold-color;
         }
 
         &.dropped:after {
-          background-color: $droppedColor;
+          background-color: $dropped-color;
         }
 
         &.plantowatch:after {
-          background-color: $plannedColor;
+          background-color: $planned-color;
         }
       }
     }
@@ -304,21 +306,21 @@ body {
         input {
           @include font;
           background: transparent;
-          border: none;
-          border-bottom: $fontColor 1px solid;
+          border: 0;
+          border-bottom: $font-color 1px solid;
           outline: none;
-          caret-color: $fontColor;
-          color: $fontColor;
+          caret-color: $font-color;
+          color: $font-color;
           height: auto;
         }
       }
 
       #search-button {
-        color: $fontColor;
-        font-size: $iconSize;
+        color: $font-color;
+        font-size: $icon-size;
 
         i {
-          text-shadow: $textShadow;
+          text-shadow: $text-shadow;
         }
       }
     }
@@ -352,9 +354,9 @@ body {
           margin-right: 12px;
 
           i {
-            font-size: $iconSize;
-            color: $fontColor;
-            text-shadow: $textShadow;
+            font-size: $icon-size;
+            color: $font-color;
+            text-shadow: $text-shadow;
           }
         }
 
@@ -393,10 +395,10 @@ body {
 
         &:after {
           @include fa;
-          color: $fontColor;
-          content: "\f0dc";
+          color: $font-color;
+          content: '\f0dc';
           cursor: pointer;
-          text-shadow: $textShadow;
+          text-shadow: $text-shadow;
         }
 
         .list-table-header {
@@ -414,19 +416,19 @@ body {
             height: auto;
             width: auto;
             background: none;
-            border-bottom: none;
+            border-bottom: 0;
             display: none;
 
             .sort-icon {
-              color: $fontColor;
+              color: $font-color;
             }
 
             .link {
               padding: 0 10px;
-              border-left: $fontColor 1px solid;
-              color: $fontColor;
+              border-left: $font-color 1px solid;
+              color: $font-color;
               font-weight: normal;
-              font-size: $fontSize;
+              font-size: $font-size;
 
               &:hover {
                 text-decoration: underline;
@@ -434,7 +436,7 @@ body {
             }
 
             &.title .link {
-              border-left: none;
+              border-left: 0;
             }
           }
         }
@@ -450,7 +452,7 @@ body {
         width: 225px;
         height: 320px;
         margin: 3px;
-        box-shadow: $shadow;
+        box-shadow: $box-shadow;
 
         &:hover {
           /* increase size of image on hover (gets blurry)
@@ -477,53 +479,53 @@ body {
               height: 20px;
               z-index: 1;
               border-bottom-right-radius: 10px;
-              box-shadow: $shadow;
+              box-shadow: $box-shadow;
 
               &:before {
                 @include fa;
                 position: absolute;
-                color: rgba($fontColor, 0.5);
+                color: rgba($font-color, 0.5);
                 top: 3px;
                 left: 3px;
               }
 
               &.watching {
-                background: $statusShadow,$watchingColor;
+                background: $status-shadow, $watching-color;
 
                 &:before {
-                  content: "\f04b";
+                  content: '\f04b';
                 }
               }
 
               &.plantowatch {
-                background: $statusShadow,$plannedColor;
+                background: $status-shadow, $planned-color;
 
                 &:before {
-                  content: "\f08d";
+                  content: '\f08d';
                 }
               }
 
               &.completed {
-                background: $statusShadow,$completedColor;
+                background: $status-shadow, $completed-color;
 
                 &:before {
-                  content: "\f00c";
+                  content: '\f00c';
                 }
               }
 
               &.onhold {
-                background: $statusShadow,$onHoldColor;
+                background: $status-shadow, $on-hold-color;
 
                 &:before {
-                  content: "\f04c";
+                  content: '\f04c';
                 }
               }
 
               &.dropped {
-                background: $statusShadow,$droppedColor;
+                background: $status-shadow, $dropped-color;
 
                 &:before {
-                  content: "\f1f8";
+                  content: '\f1f8';
                 }
               }
             }
@@ -548,8 +550,8 @@ body {
                   bottom: 0;
                   right: 0;
                   position: absolute;
-                  content: "";
-                  background: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.9));
+                  content: '';
+                  background: linear-gradient(rgba(#000, 0) 70%, rgba(#000, 0.9));
                 }
 
                 .image {
@@ -565,9 +567,9 @@ body {
               text-align: center;
 
               .link {
-                color: white;
-                @include font($fontSizeL);
-                text-shadow: $textShadow;
+                @include font($font-size-m);
+                color: $font-color;
+                text-shadow: $text-shadow;
               }
 
               .add-edit-more {
@@ -576,7 +578,7 @@ body {
                 position: absolute;
 
                 .edit {
-                  background-color: rgba(0, 0, 0, 0.6);
+                  background-color: rgba(#000, 0.6);
                   border-radius: 25px;
                   position: absolute;
                   margin-top: -150px;
@@ -594,9 +596,9 @@ body {
                     }
 
                     &:before {
-                      @include fa($iconSizeL);
-                      color: $fontColor;
-                      content: "\f044";
+                      @include fa($icon-size-l);
+                      color: $font-color;
+                      content: '\f044';
                     }
 
                   }
@@ -614,19 +616,19 @@ body {
               top: 0;
 
               &:before {
-                @include fa($iconSizeL);
+                @include fa($icon-size-l);
                 position: absolute;
-                color: $scoreColor;
-                content: "\f004";
+                color: $score-color;
+                content: '\f004';
                 z-index: -1;
                 right: 2px;
                 top: 0;
-                text-shadow: $textShadow;
+                text-shadow: $text-shadow;
               }
 
               .link {
                 @include font;
-                color: $fontColor;
+                color: $font-color;
                 top: 6px;
                 right: 6px;
                 width: 20px;
@@ -636,7 +638,7 @@ body {
 
             &.type {
               @include font;
-              color: $fontColor2;
+              color: $font-color-2;
               bottom: 5px;
               left: 5px;
             }
@@ -644,7 +646,7 @@ body {
             &.progress {
               @include font;
               z-index: 1;
-              color: $fontColor;
+              color: $font-color;
               width: 50px;
               height: 16px;
               text-align: center;
@@ -653,7 +655,7 @@ body {
               white-space: nowrap;
 
               a {
-                color: $fontColor;
+                color: $font-color;
                 margin-right: -4px;
               }
 
@@ -668,15 +670,15 @@ body {
                 top: 0;
 
                 .fa {
-                  font-size: $iconSize;
-                  text-shadow: $textShadow;
+                  font-size: $icon-size;
+                  text-shadow: $text-shadow;
                 }
               }
             }
 
             &.rated {
               @include font;
-              color: $fontColor2;
+              color: $font-color-2;
               bottom: 5px;
               right: 5px;
             }
@@ -689,13 +691,20 @@ body {
 
               a {
                 @include font;
-                color: $fontColor2;
+                color: $font-color-2;
               }
             }
 
-            &.tags, &.started, &.finished, &.days, &.storage, &.priority,
-            &.airing-started, &.airing-finished,
-            &.studio, &.licensor {
+            &.tags,
+            &.started,
+            &.finished,
+            &.days,
+            &.storage,
+            &.priority,
+            &.airing-started,
+            &.airing-finished,
+            &.studio,
+            &.licensor {
               display: none;
             }
           }
@@ -707,14 +716,14 @@ body {
 
 #footer-block {
   background-color: transparent;
-  padding: 0 0 10px 0;
+  padding: 0 0 10px;
 }
 
 #copyright {
   @include font;
-  color: $fontColor3;
+  color: $font-color-3;
 }
 
 #loading-spinner {
-  color: $fontColor3;
+  color: $font-color-3;
 }

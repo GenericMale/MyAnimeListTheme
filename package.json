@@ -4,7 +4,7 @@
   "description": "Custom Theme for MyAnimeList",
   "main": "theme.scss",
   "scripts": {
-    "build": "node-sass --output-style compressed -o docs src"
+    "build": "sass-lint -v -q && node-sass --output-style compressed -o docs src"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GenericMale/MyAnimeListTheme#readme",
   "devDependencies": {
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "sass-lint": "^1.12.1"
   }
 }
