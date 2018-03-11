@@ -16,14 +16,15 @@ $fontColor2: darken($fontColor, 20%);
 $fontColor3: darken($fontColor, 50%);
 
 $hueDegrees: 360/6;
-$droppedColor: hsl(0, 60%, 40%);
+$droppedColor: hsl(0, 50%, 50%);
 $onHoldColor: adjust-hue($droppedColor, $hueDegrees);
 $watchingColor: adjust-hue($droppedColor, $hueDegrees * 2);
 $plannedColor: adjust-hue($droppedColor, $hueDegrees * 3);
 $completedColor: adjust-hue($droppedColor, $hueDegrees * 4);
 $allColor: adjust-hue($droppedColor, $hueDegrees * 5);
 
-$scoreColor: saturate($droppedColor, 20%);
+$scoreColor: saturate($droppedColor, 25%);
+$statusShadow: linear-gradient(125deg, transparent 60%, rgba(black, 0.5));
 
 $shadow: rgba(black, 0.5) 1px 1px 2px;
 $textShadow: rgba(black, 0.8) 1px 1px 0;
@@ -472,6 +473,7 @@ body {
               height: 20px;
               z-index: 1;
               border-bottom-right-radius: 10px;
+              box-shadow: $shadow;
 
               &:before {
                 @include fa;
@@ -482,7 +484,7 @@ body {
               }
 
               &.watching {
-                background-color: $watchingColor;
+                background: $statusShadow,$watchingColor;
 
                 &:before {
                   content: "\f144";
@@ -490,7 +492,7 @@ body {
               }
 
               &.plantowatch {
-                background-color: $plannedColor;
+                background: $statusShadow,$plannedColor;
 
                 &:before {
                   content: "\f08d";
@@ -498,7 +500,7 @@ body {
               }
 
               &.completed {
-                background-color: $completedColor;
+                background: $statusShadow,$completedColor;
 
                 &:before {
                   content: "\f058";
@@ -506,7 +508,7 @@ body {
               }
 
               &.onhold {
-                background-color: $onHoldColor;
+                background: $statusShadow,$onHoldColor;
 
                 &:before {
                   content: "\f28b";
@@ -514,7 +516,7 @@ body {
               }
 
               &.dropped {
-                background-color: $droppedColor;
+                background: $statusShadow,$droppedColor;
 
                 &:before {
                   content: "\f1f8";
@@ -615,6 +617,7 @@ body {
                 z-index: -1;
                 right: 2px;
                 top: 0;
+                text-shadow: $textShadow;
               }
 
               .link {
