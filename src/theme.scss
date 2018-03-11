@@ -67,6 +67,16 @@ $text-border: $font-color 1px solid;
   font-family: lucida grande, tahoma, verdana, arial, sans-serif;
 }
 
+@mixin list-menu-popup {
+  @include font;
+  left: 0;
+  top: 0;
+  margin-top: ($font-size + $item-padding*2) * -1;
+  height: $font-size + $item-padding;
+  text-align: left;
+  padding-top: $item-padding;
+}
+
 body {
   @include font;
   background: url('./assets/background.jpg') center top no-repeat, $background;
@@ -191,14 +201,21 @@ body {
       width: $icon-size;
     }
 
+    &.profile {
+      &:hover:after {
+        display: inline-block;
+      }
+
+      &:after {
+        @include list-menu-popup;
+        content: 'Profile';
+        display: none;
+        position: absolute;
+      }
+    }
+
     .text {
-      @include font;
-      left: 0;
-      top: 0;
-      margin-top: ($font-size + $item-padding*2) * -1;
-      height: $font-size + $item-padding;
-      text-align: left;
-      padding-top: $item-padding;
+      @include list-menu-popup;
 
       &:hover {
         text-decoration: underline;
@@ -702,7 +719,7 @@ body {
             &.score {
               z-index: 1;
               right: $item-padding;
-              top: $item-padding;
+              top: 0; //should be $item-padding but the heart doesn't touch the outline on top
 
               &:before {
                 @include fa($icon-size-l);
@@ -718,7 +735,7 @@ body {
               .link {
                 @include font;
                 color: $font-color;
-                top: ($icon-size-l - $font-size)/2 - 1px; //move up one 1px because the heart is a bit head heavy ;)
+                top: ($icon-size-l - $font-size)/2 - 2px; //move up 2px because the heart is a bit head heavy
                 right: 0;
                 width: $icon-size-l;
                 position: absolute;

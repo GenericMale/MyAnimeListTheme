@@ -66,7 +66,5 @@ To compile the project follow these steps:
 ## TODO
 
 * Test manga view
-* Style filter popup
-* Light theme and other theme colors
-* Show `more` button and info
-* Make it possible to show the missing fields Numbers, Total Days Watched, Tags, Studios, Licensors
+* Transition for popups
+* Add tooltip for search, statistics, filter, history and anime/manga switcher
