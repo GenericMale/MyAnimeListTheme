@@ -308,6 +308,7 @@ body {
           caret-color: $fontColor;
           color: $fontColor;
           height: auto;
+          text-shadow: $textShadow;
         }
       }
 
@@ -367,6 +368,7 @@ body {
       margin-top: -105px;
       right: 10px;
       z-index: -1;
+      text-shadow: $textShadow;
     }
 
     .list-table {
@@ -421,6 +423,7 @@ body {
               color: $fontColor;
               font-weight: normal;
               font-size: $fontSize;
+              text-shadow: $textShadow;
 
               &:hover {
                 text-decoration: underline;
