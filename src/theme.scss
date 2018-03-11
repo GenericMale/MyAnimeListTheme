@@ -322,6 +322,10 @@ body {
         }
       }
     }
+
+    &.fixed + div.list-block {
+      margin-top: 45px;
+    }
   }
 
   .list-block {
