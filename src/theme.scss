@@ -113,9 +113,10 @@ body {
       @include font;
       left: 0;
       top: 0;
-      margin-top: -18px;
+      margin-top: -28px;
       height: 18px;
       text-align: left;
+      padding-top: 10px;
 
       &:hover {
         text-decoration: underline;
@@ -359,7 +360,8 @@ body {
           right: 0;
           font-size: 0;
           z-index: 1;
-          margin-top: -20px;
+          padding-top: 10px;
+          margin-top: -30px;
           margin-right: -10px;
           height: 32px;
 
