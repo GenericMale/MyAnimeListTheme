@@ -84,6 +84,7 @@ body {
   text-align: left;
   margin-top: -27px;
   float: left;
+  user-select: none;
 
   form {
     display: inline-block;
@@ -129,11 +130,18 @@ body {
       left: 0 !important;
     }
 
-    &.setting:hover {
+    &.setting {
+      cursor: pointer;
+
       .text {
+        display: none;
+      }
+
+      &:hover .text {
         width: 180px;
-        height: 18px;
+        height: 32px;
         text-decoration: none;
+        display: block;
 
         .link-list-setting, .link-style-setting {
           background-color: transparent;
@@ -246,8 +254,8 @@ body {
     }
 
     .search-container {
-      margin-top: -55px;
-      right: 58px;
+      margin-top: -33px;
+      right: 87px;
       z-index: 1;
 
       #search-box {
@@ -286,7 +294,7 @@ body {
 
     .list-status-title {
       height: auto;
-      margin-top: -84px;
+      margin-top: -62px;
       position: absolute;
       right: 0;
       font-size: 0;
@@ -294,11 +302,17 @@ body {
 
       .stats {
         line-height: normal;
+        right: 20px;
 
-        i {
-          font-size: $iconSize;
-          color: $fontColor;
+        a {
+          margin-right: 12px;
+
+          i {
+            font-size: $iconSize;
+            color: $fontColor;
+          }
         }
+
       }
 
       .text {
@@ -313,6 +327,7 @@ body {
       position: absolute;
       margin-top: -105px;
       right: 10px;
+      z-index: -1;
     }
 
     .list-table {
@@ -322,10 +337,21 @@ body {
       text-align: center;
 
       tbody:first-child {
-        margin-top: -70px;
-        height: 70px;
-        display: inline-block;
-        width: 100%;
+        margin-top: -18px;
+        position: absolute;
+        top: 0;
+        right: 10px;
+
+        &:hover .list-table-header .header-title:not(.image) {
+          display: table-cell;
+        }
+
+        &:after {
+          @include fa;
+          color: $fontColor;
+          content: "\f0dc";
+          cursor: pointer;
+        }
 
         .list-table-header {
           display: inline-block;
@@ -333,22 +359,16 @@ body {
           right: 0;
           font-size: 0;
           z-index: 1;
-
-          &:before {
-            @include fa;
-            color: $fontColor;
-            content: "\f0dc";
-            position: absolute;
-            left: 0;
-            top: 10px;
-          }
+          margin-top: -20px;
+          margin-right: -10px;
+          height: 32px;
 
           .header-title {
             height: auto;
             width: auto;
-            padding: 10px 0;
             background: none;
             border-bottom: none;
+            display: none;
 
             .sort-icon {
               color: $fontColor;
@@ -368,11 +388,6 @@ body {
 
             &.title .link {
               border-left: none;
-              padding-left: 20px;
-            }
-
-            &.image {
-              display: none;
             }
           }
         }
