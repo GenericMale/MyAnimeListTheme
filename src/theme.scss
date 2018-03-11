@@ -1,5 +1,6 @@
 $min-width: 820px;
 $header-height: 150px;
+$status-menu-height: 40px;
 
 $icon-size: 14px;
 $icon-size-l: 28px;
@@ -7,6 +8,17 @@ $icon-size-l: 28px;
 $font-size: 13px;
 $font-size-m: 16px;
 $font-size-l: 18px;
+
+$page-padding: 10px;
+$item-padding: 3px;
+$icon-padding: 15px;
+$text-padding: 10px;
+$status-button-padding: 20px;
+
+$cover-width: 225px;
+$cover-height: 320px;
+$status-width: 70px;
+$edit-size: 50px;
 
 $background: hsl(240, 15%, 20%);
 $status-background: lighten($background, 10%);
@@ -28,6 +40,8 @@ $score-color: saturate($dropped-color, 25%);
 $status-shadow: linear-gradient(125deg, transparent 60%, rgba(#000, 0.5));
 $box-shadow: rgba(#000, 0.5) 1px 1px 2px;
 $text-shadow: rgba(#000, 0.8) 1px 1px 0;
+
+$text-border: $font-color 1px solid;
 
 @mixin fa($size: $icon-size) {
   display: inline-block;
@@ -64,18 +78,18 @@ body {
 
   .header-menu {
     position: relative;
-    top: 10px;
-    right: 10px;
+    top: $page-padding;
+    right: $page-padding;
     z-index: 1;
 
     &.other {
-      top: 10px;
+      top: $page-padding;
     }
   }
 
   .header-title {
-    top: 10px;
-    left: 10px;
+    top: $page-padding;
+    left: $page-padding;
     z-index: 1;
   }
 }
@@ -84,15 +98,15 @@ body {
   position: relative;
   width: auto;
   border: 0;
-  left: 10px;
+  left: $page-padding;
   text-align: left;
-  margin-top: -17px;
+  margin-top: ($icon-size + $item-padding) * -1;
   float: left;
   user-select: none;
+  font-size: 0;
 
   form {
     display: inline-block;
-    margin-right: -3px;
   }
 
   .icon-menu {
@@ -100,7 +114,7 @@ body {
     display: inline-block;
     width: $icon-size;
     height: $icon-size;
-    margin-right: 10px;
+    margin-right: $icon-padding;
     color: $font-color;
 
     &:not(.profile):hover {
@@ -112,10 +126,10 @@ body {
       @include font;
       left: 0;
       top: 0;
-      margin-top: -28px;
-      height: 18px;
+      margin-top: ($font-size + $item-padding*2) * -1;
+      height: $font-size + $item-padding;
       text-align: left;
-      padding-top: 10px;
+      padding-top: $item-padding;
 
       &:hover {
         text-decoration: underline;
@@ -172,17 +186,19 @@ body {
 
       .text {
         display: none;
+        font-size: 0;
       }
 
       &:hover .text {
-        width: 180px;
-        height: 32px;
+        width: auto;
+        height: $font-size + $item-padding + $icon-size;
         text-decoration: none;
         display: block;
 
         .link-list-setting,
         .link-style-setting {
           background-color: transparent;
+          font-size: $font-size;
           line-height: $font-size;
           height: auto;
           border: 0;
@@ -197,12 +213,12 @@ body {
         }
 
         .link-list-setting {
-          padding-right: 5px;
+          padding-right: $text-padding;
         }
 
         .link-style-setting {
-          padding-left: 10px;
-          border-left: $font-color 1px solid;
+          padding-left: $text-padding;
+          border-left: $text-border;
         }
       }
     }
@@ -244,7 +260,7 @@ body {
     z-index: 2;
     background-color: $status-background;
     border: 0;
-    height: 41px;
+    height: $status-menu-height;
     box-shadow: $box-shadow;
     min-width: $min-width;
 
@@ -254,7 +270,7 @@ body {
 
       .status-button {
         @include font($font-size-l);
-        padding: 0 20px;
+        padding: 0 $status-button-padding;
         color: $font-color-2;
 
         &.on {
@@ -292,12 +308,13 @@ body {
     }
 
     .search-container {
-      margin-top: -33px;
-      right: 87px;
+      margin-top: ($icon-size + $item-padding) * -1;
+      right: ($icon-size + $icon-padding) * 3 + $page-padding;
       z-index: 1;
 
       #search-box {
-        margin-top: 8px;
+        margin: 0;
+        height: $font-size;
 
         &.open {
           background: transparent;
@@ -307,17 +324,19 @@ body {
           @include font;
           background: transparent;
           border: 0;
-          border-bottom: $font-color 1px solid;
+          border-bottom: $text-border;
           outline: none;
           caret-color: $font-color;
           color: $font-color;
-          height: auto;
+          height: $font-size;
         }
       }
 
       #search-button {
         color: $font-color;
         font-size: $icon-size;
+        height: $icon-size;
+        margin: 0;
 
         i {
           text-shadow: $text-shadow;
@@ -326,12 +345,12 @@ body {
     }
 
     &.fixed + div.list-block {
-      margin-top: 45px;
+      margin-top: $status-menu-height + $item-padding;
     }
   }
 
   .list-block {
-    margin-top: 3px;
+    margin-top: $item-padding;
     min-height: 0;
   }
 
@@ -340,7 +359,7 @@ body {
 
     .list-status-title {
       height: auto;
-      margin-top: -62px;
+      margin-top: ($status-menu-height + $icon-size + $item-padding*2) * -1;
       position: absolute;
       right: 0;
       font-size: 0;
@@ -348,10 +367,11 @@ body {
 
       .stats {
         line-height: normal;
-        right: 20px;
+        right: $page-padding + $icon-size + $icon-padding;
 
         a {
-          margin-right: 12px;
+          margin-right: 0;
+          margin-left: $icon-padding;
 
           i {
             font-size: $icon-size;
@@ -359,7 +379,6 @@ body {
             text-shadow: $text-shadow;
           }
         }
-
       }
 
       .text {
@@ -372,8 +391,8 @@ body {
       background-color: transparent;
       width: auto;
       position: absolute;
-      margin-top: -105px;
-      right: 10px;
+      margin-top: ($status-menu-height + $item-padding + $icon-size + $item-padding + ($font-size + $item-padding)*2) * -1;
+      right: $page-padding;
       z-index: -1;
     }
 
@@ -384,10 +403,10 @@ body {
       text-align: center;
 
       tbody:first-child {
-        margin-top: -18px;
+        margin-top: ($icon-size + $item-padding) * -1;
         position: absolute;
         top: 0;
-        right: 10px;
+        right: $page-padding;
 
         &:hover .list-table-header .header-title:not(.image) {
           display: table-cell;
@@ -407,10 +426,10 @@ body {
           right: 0;
           font-size: 0;
           z-index: 1;
-          padding-top: 10px;
-          margin-top: -30px;
-          margin-right: -10px;
-          height: 32px;
+          padding-top: $item-padding;
+          margin-top: ($font-size + $item-padding*2) * -1;
+          margin-right: $text-padding * -1;
+          height: $font-size + $icon-size + $item-padding;
 
           .header-title {
             height: auto;
@@ -424,8 +443,8 @@ body {
             }
 
             .link {
-              padding: 0 10px;
-              border-left: $font-color 1px solid;
+              padding: 0 $text-padding;
+              border-left: $text-border;
               color: $font-color;
               font-weight: normal;
               font-size: $font-size;
@@ -449,15 +468,15 @@ body {
       .list-item {
         display: inline-block;
         position: relative;
-        width: 225px;
-        height: 320px;
-        margin: 3px;
+        width: $cover-width;
+        height: $cover-height;
+        margin: $item-padding;
         box-shadow: $box-shadow;
 
         &:hover {
           /* increase size of image on hover (gets blurry)
-          width: $imageWidth + $imagePadding * 2;
-          height: $imageHeight + $imagePadding * 2;
+          width: $cover-width + $item-padding * 2;
+          height: $cover-height + $item-padding * 2;
           margin: 0;
           */
 
@@ -475,18 +494,18 @@ body {
             border-style: none;
 
             &.status {
-              width: 70px;
-              height: 20px;
+              width: $status-width;
+              height: $icon-size + $item-padding*2;
               z-index: 1;
-              border-bottom-right-radius: 10px;
+              border-bottom-right-radius: ($font-size + $item-padding*2)/2;
               box-shadow: $box-shadow;
 
               &:before {
                 @include fa;
                 position: absolute;
                 color: rgba($font-color, 0.5);
-                top: 3px;
-                left: 3px;
+                top: $item-padding;
+                left: $item-padding;
               }
 
               &.watching {
@@ -561,9 +580,9 @@ body {
             }
 
             &.title {
-              bottom: 30px;
-              left: 5px;
-              right: 5px;
+              bottom: ($font-size + $item-padding)*2;
+              left: $item-padding;
+              right: $item-padding;
               text-align: center;
 
               .link {
@@ -576,21 +595,17 @@ body {
                 display: none;
                 font-size: 0;
                 position: absolute;
+                width: 100%;
+                bottom: $cover-height/2 - $edit-size;
 
                 .edit {
                   background-color: rgba(#000, 0.6);
-                  border-radius: 25px;
-                  position: absolute;
-                  margin-top: -150px;
-                  margin-left: 80px;
-                  width: 50px;
-                  height: 50px;
+                  border-radius: $edit-size/2;
+                  width: $edit-size;
+                  height: $edit-size;
+                  display: inline-block;
 
                   a {
-                    left: 13px;
-                    position: absolute;
-                    top: 12px;
-
                     &:hover {
                       text-decoration: none;
                     }
@@ -598,7 +613,8 @@ body {
                     &:before {
                       @include fa($icon-size-l);
                       color: $font-color;
-                      content: '\f044';
+                      content: '\f040';
+                      margin: ($edit-size - $icon-size-l) / 2;
                     }
 
                   }
@@ -612,8 +628,8 @@ body {
 
             &.score {
               z-index: 1;
-              right: 0;
-              top: 0;
+              right: $item-padding;
+              top: $item-padding;
 
               &:before {
                 @include fa($icon-size-l);
@@ -621,7 +637,7 @@ body {
                 color: $score-color;
                 content: '\f004';
                 z-index: -1;
-                right: 2px;
+                right: 0;
                 top: 0;
                 text-shadow: $text-shadow;
               }
@@ -629,9 +645,9 @@ body {
               .link {
                 @include font;
                 color: $font-color;
-                top: 6px;
-                right: 6px;
-                width: 20px;
+                top: ($icon-size-l - $font-size)/2 - 1px; //move up one 1px because the heart is a bit head heavy ;)
+                right: 0;
+                width: $icon-size-l;
                 position: absolute;
               }
             }
@@ -639,34 +655,43 @@ body {
             &.type {
               @include font;
               color: $font-color-2;
-              bottom: 5px;
-              left: 5px;
+              bottom: $item-padding;
+              left: $item-padding;
             }
 
             &.progress {
               @include font;
               z-index: 1;
               color: $font-color;
-              width: 50px;
-              height: 16px;
+              width: $status-width - $icon-size - $item-padding*3;
+              height: $font-size;
               text-align: center;
-              left: 19px;
-              top: 3px;
+              left: $icon-size + $item-padding*2;
+              top: $item-padding;
               white-space: nowrap;
+              font-size: 0;
 
               a {
                 color: $font-color;
-                margin-right: -4px;
+                font-size: $font-size;
               }
 
-              span {
-                margin-left: -4px;
+              span:only-child {
+                font-size: $font-size;
+              }
+
+              span:nth-child(2) {
+                font-size: $font-size;
+
+                &:before {
+                  content: '/';
+                }
               }
 
               .icon-add-episode {
                 display: none;
                 position: absolute;
-                right: -15px;
+                right: ($icon-size + $item-padding*2) * -1;
                 top: 0;
 
                 .fa {
@@ -679,14 +704,14 @@ body {
             &.rated {
               @include font;
               color: $font-color-2;
-              bottom: 5px;
-              right: 5px;
+              bottom: $item-padding;
+              right: $item-padding;
             }
 
             &.season {
-              bottom: 5px;
-              right: 5px;
-              left: 5px;
+              bottom: $item-padding;
+              right: $item-padding;
+              left: $item-padding;
               text-align: center;
 
               a {
@@ -716,7 +741,7 @@ body {
 
 #footer-block {
   background-color: transparent;
-  padding: 0 0 10px;
+  padding: 0 0 $page-padding;
 }
 
 #copyright {
