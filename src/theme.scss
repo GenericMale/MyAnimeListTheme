@@ -478,7 +478,7 @@ body {
               &:before {
                 @include fa;
                 position: absolute;
-                color: $fontColor;
+                color: rgba($fontColor, 0.5);
                 top: 3px;
                 left: 3px;
               }
@@ -487,7 +487,7 @@ body {
                 background: $statusShadow,$watchingColor;
 
                 &:before {
-                  content: "\f144";
+                  content: "\f04b";
                 }
               }
 
@@ -503,7 +503,7 @@ body {
                 background: $statusShadow,$completedColor;
 
                 &:before {
-                  content: "\f058";
+                  content: "\f00c";
                 }
               }
 
@@ -511,7 +511,7 @@ body {
                 background: $statusShadow,$onHoldColor;
 
                 &:before {
-                  content: "\f28b";
+                  content: "\f04c";
                 }
               }
 
