@@ -85,6 +85,20 @@ body {
     &.other {
       top: $page-padding;
     }
+
+    .btn-menu {
+      font-size: $font-size-l;
+
+      .fa {
+        display: none;
+      }
+    }
+
+    .header-info {
+      font-size: $font-size;
+      margin-top: $item-padding;
+      margin-right: 0;
+    }
   }
 
   .header-title {
