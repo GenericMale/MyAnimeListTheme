@@ -10,7 +10,7 @@ $font-size-m: 16px;
 $font-size-l: 18px;
 
 $item-padding: 3px;
-$page-padding: $item-padding * 3;
+$page-padding: 10px;
 $icon-padding: 15px;
 $text-padding: 10px;
 $status-button-padding: 20px;
@@ -433,7 +433,7 @@ body {
     }
 
     &.fixed + div.list-block {
-      margin-top: $status-menu-height + $item-padding;
+      margin-top: $status-menu-height + $page-padding;
     }
   }
 
@@ -447,7 +447,7 @@ body {
 
     .list-status-title {
       height: auto;
-      margin-top: ($status-menu-height + $icon-size + $item-padding*4) * -1;
+      margin-top: ($status-menu-height + $page-padding + $icon-size + $item-padding) * -1;
       position: absolute;
       right: 0;
       font-size: 0;
@@ -479,7 +479,7 @@ body {
       background-color: transparent;
       width: auto;
       position: absolute;
-      margin-top: ($status-menu-height + $item-padding + $icon-size + $item-padding + ($font-size + $item-padding)*2) * -1;
+      margin-top: ($status-menu-height + $page-padding + $icon-size + $item-padding + ($font-size + $item-padding)*2) * -1;
       right: $page-padding;
       z-index: -1;
     }
