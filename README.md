@@ -22,9 +22,10 @@ This is my custom theme for MyAnimeList (MAL).
 2. Go to the _Lists_ tab and decide on which information to show. At least _Episodes_ and _Image_ is required. 
 Optional but highly recommended is _Score_, _Premiered_, _Type_ and _Rating_.
 Additionally the following fields will just give you additional sort options but the data is not shown in this theme:
-_Aired Dates_, _Start/End Dates_, _Storage_ and _Priority_. Don't forget to click the _Save_ button!
+_Aired Dates_, _Start/End Dates_, _Storage_ and _Priority_. Don't forget to click the _Submit_ button!
 3. Go to _List Style Design_ again and click on the preview image of the _Default Theme_.
-4. On the left side expand _Add Custom CSS_ and paste in the following code and click save:
+4. Set _Show cover image_ to _No_ and either set _Show background image_ to no or follow the steps outlined in *Custom Header Image* section to upload your own banner.
+5. Expand _Add Custom CSS_ and paste in the following code and click save:
 ```css
 @import url(https://malcat-gen.appspot.com/series?preset=dataimagelink);
 @import url(https://genericmale.github.io/MyAnimeListTheme/theme.css);
@@ -66,5 +67,10 @@ To compile the project follow these steps:
 ## TODO
 
 * Test manga view
-* Transition for popups
+* CSS transitions for popups
 * Add tooltip for search, statistics, filter, history and anime/manga switcher
+* Use cover image as header and background as background.
+* Style content-status (Airing etc)
+* Fix placement of statistics
+* Use css variables for customization
+* Improve variables used in sass file to enable easier extension and customization
