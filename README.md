@@ -69,6 +69,7 @@ To compile the project follow these steps:
 * Test manga view
 * CSS transitions for popups
 * Add tooltip for search, statistics, filter, history and anime/manga switcher
+* Show low-res images when high-res images arent loaded (yet)
 * Use cover image as header and background as background.
 * Style content-status (Airing etc)
 * Fix placement of statistics
