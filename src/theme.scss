@@ -9,8 +9,8 @@ $font-size: 13px;
 $font-size-m: 16px;
 $font-size-l: 18px;
 
-$page-padding: 10px;
 $item-padding: 3px;
+$page-padding: $item-padding * 3;
 $icon-padding: 15px;
 $text-padding: 10px;
 $status-button-padding: 20px;
@@ -438,7 +438,7 @@ body {
   }
 
   .list-block {
-    margin-top: $item-padding;
+    margin: $page-padding;
     min-height: 0;
   }
 
