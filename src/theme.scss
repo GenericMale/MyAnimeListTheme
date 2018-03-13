@@ -113,6 +113,8 @@ select {
   outline: none;
   caret-color: $font-color;
   color: $font-color;
+
+  -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
 
