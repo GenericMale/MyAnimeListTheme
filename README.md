@@ -72,6 +72,5 @@ To compile the project follow these steps:
 * Show low-res images when high-res images arent loaded (yet)
 * Use cover image as header and background as background.
 * Style content-status (Airing etc)
-* Fix placement of statistics
 * Use css variables for customization
 * Improve variables used in sass file to enable easier extension and customization
