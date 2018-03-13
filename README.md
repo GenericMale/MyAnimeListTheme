@@ -47,7 +47,7 @@ use the following as _Custom CSS_ and change the pixel size to the height of you
 @import url('https://genericmale.github.io/MyAnimeListTheme/theme.css');
 
 .list-menu-float {
-  height: 150px
+  top: 150px
 }
 ```
 
