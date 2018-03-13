@@ -1,3 +1,5 @@
+@import '../node_modules/font-awesome-sass/assets/stylesheets/font-awesome/variables';
+
 $min-width: 820px;
 $header-height: 150px;
 $status-menu-height: 40px;
@@ -164,13 +166,13 @@ body {
 
         &.manga-list:before {
           @include fa;
-          content: '\f02d';
+          content: $fa-var-book;
           color: $font-color;
         }
 
         &.anime-list:before {
           @include fa;
-          content: '\f008';
+          content: $fa-var-film;
           color: $font-color;
         }
       }
@@ -233,36 +235,36 @@ body {
       background-image: none !important;
 
       &:before {
-        content: '\f007';
+        content: $fa-var-user;
       }
     }
 
     &.quick-add:before {
-      content: '\f0fe';
+      content: $fa-var-plus-square;
     }
 
     &.anime-list:before {
-      content: '\f008';
+      content: $fa-var-film;
     }
 
     &.manga-list:before {
-      content: '\f02d';
+      content: $fa-var-book;
     }
 
     &.history:before {
-      content: '\f1da';
+      content: $fa-var-history;
     }
 
     &.export:before {
-      content: '\f15b';
+      content: $fa-var-file;
     }
 
     &.logout:before {
-      content: '\f08b';
+      content: $fa-var-sign-out;
     }
 
     &.setting:before {
-      content: '\f013';
+      content: $fa-var-cog;
     }
 
     &.setting {
@@ -512,7 +514,7 @@ body {
         &:after {
           @include fa;
           color: $font-color;
-          content: '\f0dc';
+          content: $fa-var-sort;
           text-shadow: $text-shadow;
         }
 
@@ -619,7 +621,7 @@ body {
                 background: $status-shadow, $watching-color;
 
                 &:before {
-                  content: '\f04b';
+                  content: $fa-var-play;
                 }
               }
 
@@ -628,7 +630,7 @@ body {
                 background: $status-shadow, $planned-color;
 
                 &:before {
-                  content: '\f08d';
+                  content: $fa-var-thumb-tack;
                 }
               }
 
@@ -636,7 +638,7 @@ body {
                 background: $status-shadow, $completed-color;
 
                 &:before {
-                  content: '\f00c';
+                  content: $fa-var-check;
                 }
               }
 
@@ -644,7 +646,7 @@ body {
                 background: $status-shadow, $on-hold-color;
 
                 &:before {
-                  content: '\f04c';
+                  content: $fa-var-pause;
                 }
               }
 
@@ -652,7 +654,7 @@ body {
                 background: $status-shadow, $dropped-color;
 
                 &:before {
-                  content: '\f1f8';
+                  content: $fa-var-trash;
                 }
               }
             }
@@ -721,7 +723,7 @@ body {
                     &:before {
                       @include fa($icon-size-l);
                       color: $font-color;
-                      content: '\f040';
+                      content: $fa-var-pencil;
                       margin: ($edit-size - $icon-size-l) / 2;
                     }
 
@@ -743,7 +745,7 @@ body {
                 @include fa($icon-size-l);
                 position: absolute;
                 color: $score-color;
-                content: '\f004';
+                content: $fa-var-heart;
                 z-index: -1;
                 right: 0;
                 top: 0;

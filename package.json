@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GenericMale/MyAnimeListTheme#readme",
   "devDependencies": {
+    "font-awesome-sass": "^4.7.0",
     "node-sass": "^4.7.2",
     "sass-lint": "^1.12.1"
   }
