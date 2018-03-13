@@ -22,7 +22,6 @@ $status-button-padding: 20px;
 
 $cover-width: 225px;
 $cover-height: 320px;
-$status-width: 70px;
 $edit-size: 50px;
 
 $background: hsl(240, 15%, 20%);
@@ -620,22 +619,10 @@ body {
             border-style: none;
 
             &.status {
-              width: $status-width;
-              height: $icon-size + $item-padding*2;
-              z-index: 1;
-              border-bottom-right-radius: ($font-size + $item-padding*2)/2;
-              box-shadow: $box-shadow;
+              display: none;
 
-              &:before {
-                @include fa;
-                position: absolute;
-                color: rgba($font-color, 0.5);
-                top: $item-padding;
-                left: $item-padding;
-              }
-
-              &.watching,
-              &.reading {
+              &.watching ~ .progress,
+              &.reading ~ .progress {
                 background: $status-shadow, $watching-color;
 
                 &:before {
@@ -643,8 +630,8 @@ body {
                 }
               }
 
-              &.plantowatch,
-              &.plantoread {
+              &.plantowatch ~ .progress,
+              &.plantoread ~ .progress {
                 background: $status-shadow, $planned-color;
 
                 &:before {
@@ -652,7 +639,7 @@ body {
                 }
               }
 
-              &.completed {
+              &.completed ~ .progress {
                 background: $status-shadow, $completed-color;
 
                 &:before {
@@ -660,7 +647,7 @@ body {
                 }
               }
 
-              &.onhold {
+              &.onhold ~ .progress {
                 background: $status-shadow, $on-hold-color;
 
                 &:before {
@@ -668,7 +655,7 @@ body {
                 }
               }
 
-              &.dropped {
+              &.dropped ~ .progress {
                 background: $status-shadow, $dropped-color;
 
                 &:before {
@@ -810,15 +797,17 @@ body {
             &.chapter,
             &.volume {
               @include font;
-              z-index: 1;
               color: $font-color;
-              width: $status-width - $icon-size - $item-padding*3;
-              height: $font-size;
-              text-align: center;
-              left: $icon-size + $item-padding*2;
-              top: $item-padding;
               white-space: nowrap;
               font-size: 0;
+              padding: $item-padding $item-padding*3 $item-padding $item-padding;
+              border-bottom-right-radius: ($font-size + $item-padding*2)/2;
+              box-shadow: $box-shadow;
+
+              div {
+                display: inline-block;
+                vertical-align: top;
+              }
 
               a {
                 color: $font-color;
@@ -837,13 +826,20 @@ body {
                 }
               }
 
+              &:before {
+                @include fa;
+                display: inline-block;
+                color: rgba($font-color, 0.5);
+                margin-right: $item-padding*2;
+              }
+
               .icon-add-episode,
               .icon-add-chapter,
               .icon-add-volume {
                 display: none;
                 position: absolute;
-                right: ($icon-size + $item-padding*2) * -1;
-                top: 0;
+                right: ($icon-size + $item-padding) * -1;
+                top: $item-padding;
 
                 .fa {
                   font-size: $icon-size;
