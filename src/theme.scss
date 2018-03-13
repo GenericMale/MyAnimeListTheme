@@ -42,6 +42,7 @@ $score-color: saturate($dropped-color, 25%);
 $status-shadow: linear-gradient(125deg, transparent 60%, rgba(#000, 0.5));
 $box-shadow: rgba(#000, 0.5) 1px 1px 2px;
 $text-shadow: #000 1px 1px 1px;
+$edit-shadow: #000 2px 2px 5px;
 
 $text-border: $font-color 1px solid;
 
@@ -721,11 +722,12 @@ body {
                 bottom: $cover-height/2 - $edit-size;
 
                 .edit {
-                  background-color: rgba(#000, 0.6);
+                  background-color: rgba(#000, 0.7);
                   border-radius: $edit-size/2;
                   width: $edit-size;
                   height: $edit-size;
                   display: inline-block;
+                  box-shadow: $edit-shadow;
 
                   a {
                     &:hover {
