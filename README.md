@@ -10,7 +10,7 @@ This is my custom theme for MyAnimeList (MAL).
 
 * Responsive
 * Tested on Chrome, Firefox, IE11, Edge
-* Support for custom headers using the MAL background selector
+* Support for custom headers and backgrounds using the MAL image selectors
 * Uses MAL Modern Theme
 * All controls still in place and fully functional (with the exception of the `More` button)
 * Shows Title, Status (Watched, Planned etc), Episodes, Big Images, User Score, Season, Type (TV, Movie etc), Rating (PG-13, R etc)
@@ -37,21 +37,17 @@ Note: it can take a few minutes until the high quality covers are generated.
 
 ### Custom Header Image
 
-To use a custom background image, just upload it on the _Customize Default Theme_ page and use the following settings:
+To use a custom header image, just upload it as cover image on the _Customize Default Theme_ page.
 
-* Attachment: scroll
-* Position: top / center
-* Repeat: no-repeat
-
-The default header provided with the theme has a size of 150px. To change the reserved space for the header, 
-use the following as _Custom CSS_ and change the pixel size to the height of your image:
+The default header provided with the theme has a size of 150px. To align all icons with the custom header, 
+use the following as _Custom CSS_ and change the pixel size to the height of your header image:
 
 ```css
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
 @import url('https://genericmale.github.io/MyAnimeListTheme/theme.css');
 
-.header {
-  height: 300px
+.list-menu-float {
+  height: 150px
 }
 ```
 
@@ -69,8 +65,6 @@ To compile the project follow these steps:
 ## TODO
 
 * Test manga view
-* Show low-res images when high-res images arent loaded (yet)
-* Use cover image as header and background as background.
 * Style content-status (Airing etc)
 * Use css variables for customization
 * Improve variables used in sass file to enable easier extension and customization

@@ -1,8 +1,10 @@
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
 @import '../node_modules/font-awesome-sass/assets/stylesheets/font-awesome/variables';
 
-$min-width: 820px;
+$default-background: './assets/background.jpg';
 $header-height: 150px;
+
+$min-width: 820px;
 $status-menu-height: 40px;
 
 $icon-size: 14px;
@@ -97,12 +99,14 @@ $text-border: $font-color 1px solid;
 
 body {
   @include font;
-  background: url('./assets/background.jpg') center top no-repeat, $background;
+  background-color: $background;
+  background-position: top ($header-height+$status-menu-height) center;
 }
 
 .header {
-  height: $header-height;
-  width: auto;
+  height: auto;
+  width: 100%;
+  position: absolute;
 
   .header-menu {
     position: relative;
@@ -210,6 +214,7 @@ body {
   float: left;
   user-select: none;
   font-size: 0;
+  top: $header-height;
 
   form {
     display: inline-block;
@@ -333,16 +338,16 @@ body {
 
   .cover-block {
     width: 100%;
-    top: $header-height * -1;
-    position: absolute;
+    background: url($default-background) top/cover no-repeat;
+    min-height: $header-height;
 
     #cover-image-container {
       padding-top: 0;
-      width: auto;
-      height: $header-height;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
 
       .btn-list-setting {
         display: none;
@@ -350,7 +355,6 @@ body {
 
       #cover-image {
         max-width: none;
-        max-height: $header-height;
       }
     }
   }
@@ -514,9 +518,8 @@ body {
       text-align: center;
 
       tbody:first-child {
-        margin-top: ($icon-size + $item-padding) * -1;
+        margin-top: ($status-menu-height + $page-padding + $icon-size + $item-padding) * -1;
         position: absolute;
-        top: 0;
         right: $page-padding;
         cursor: pointer;
 
