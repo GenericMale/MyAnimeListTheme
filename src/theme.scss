@@ -52,7 +52,7 @@ $text-border: $font-color 1px solid;
 }
 
 @mixin font($size: $font-size) {
-  font: normal normal normal #{$size}/1 lucida grande, tahoma, verdana, arial, sans-serif;
+  font: normal normal normal #{$size}/1 tahoma, verdana, arial, sans-serif;
 }
 
 @mixin tooltip-placement($align: left, $offset: 0) {
