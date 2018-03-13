@@ -39,7 +39,7 @@ $score-color: saturate($dropped-color, 25%);
 
 $status-shadow: linear-gradient(125deg, transparent 60%, rgba(#000, 0.5));
 $box-shadow: rgba(#000, 0.5) 1px 1px 2px;
-$text-shadow: rgba(#000, 0.8) 1px 1px 0;
+$text-shadow: #000 1px 1px 1px;
 
 $text-border: $font-color 1px solid;
 
