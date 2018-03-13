@@ -64,7 +64,7 @@ To compile the project follow these steps:
 
 ## TODO
 
-* Test manga view
+* Show difference between chapters and volumes in manga list
 * Style content-status (Airing etc)
 * Use css variables for customization
 * Improve variables used in sass file to enable easier extension and customization
