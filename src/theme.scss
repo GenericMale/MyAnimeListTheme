@@ -45,26 +45,14 @@ $text-border: $font-color 1px solid;
 
 @mixin fa($size: $icon-size) {
   display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  font-size: $size;
-  line-height: 1;
-  font-family: FontAwesome;
+  font: normal normal normal #{$size}/1 FontAwesome;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: auto;
 }
 
 @mixin font($size: $font-size) {
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  font-size: $size;
-  line-height: 1;
-  font-family: lucida grande, tahoma, verdana, arial, sans-serif;
+  font: normal normal normal #{$size}/1 lucida grande, tahoma, verdana, arial, sans-serif;
 }
 
 @mixin tooltip-placement($align: left, $offset: 0) {
