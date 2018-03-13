@@ -57,24 +57,27 @@ $text-border: $font-color 1px solid;
   font: normal normal normal #{$size}/1 tahoma, verdana, arial, sans-serif;
 }
 
-@mixin tooltip-placement($align: left, $offset: 0) {
+@mixin tooltip-placement($h-align: left, $v-align: top, $h-offset: 0, $v-offset: 0) {
   @include font;
-  #{$align}: $offset;
-  top: 0;
-  margin-top: ($font-size + $item-padding*2) * -1;
+  #{$h-align}: $h-offset;
+  #{$v-align}: $v-offset;
+  margin-#{$v-align}: ($font-size + $item-padding*2) * -1;
+  padding-#{$v-align}: $item-padding;
+  text-align: $h-align;
+  vertical-align: $v-align;
   height: $font-size + $item-padding;
-  text-align: $align;
-  padding-top: $item-padding;
+  white-space: nowrap;
 
   &:hover {
     text-decoration: underline;
   }
 }
 
-@mixin tooltip($text, $align: left, $offset: 0, $width: 94px) {
+@mixin tooltip($text, $h-align: left, $v-align: top, $h-offset: 0, $v-offset: 0) {
   &:after {
-    @include tooltip-placement($align, $offset);
+    @include tooltip-placement($h-align, $v-align, $h-offset, $v-offset);
     content: $text;
+    color: $font-color;
     position: absolute;
     overflow: hidden;
     width: 0;
@@ -85,7 +88,7 @@ $text-border: $font-color 1px solid;
   }
 
   &:hover:after {
-    width: $width;
+    width: 100px;
     opacity: 1;
   }
 }
@@ -133,6 +136,7 @@ body {
       margin-right: $icon-size + $item-padding;
 
       a:last-child {
+        @include tooltip('History', right, bottom, $icon-size + $item-padding);
         font-size: 0;
 
         .fa {
@@ -164,16 +168,24 @@ body {
           display: none;
         }
 
-        &.manga-list:before {
-          @include fa;
-          content: $fa-var-book;
-          color: $font-color;
+        &.manga-list {
+          @include tooltip('Manga List', right, bottom);
+
+          &:before {
+            @include fa;
+            content: $fa-var-book;
+            color: $font-color;
+          }
         }
 
-        &.anime-list:before {
-          @include fa;
-          content: $fa-var-film;
-          color: $font-color;
+        &.anime-list {
+          @include tooltip('Anime List', right, bottom);
+
+          &:before {
+            @include fa;
+            content: $fa-var-film;
+            color: $font-color;
+          }
         }
       }
     }
@@ -470,7 +482,7 @@ body {
         }
 
         #show-stats-button {
-          @include tooltip('Statistics', right, $icon-size + $icon-padding);
+          @include tooltip('Statistics', right, top, $icon-size + $icon-padding);
         }
 
         #advanced-options-button {

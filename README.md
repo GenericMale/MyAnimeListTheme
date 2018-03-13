@@ -67,7 +67,6 @@ To compile the project follow these steps:
 ## TODO
 
 * Test manga view
-* Add tooltips to history and anime/manga switcher
 * Show low-res images when high-res images arent loaded (yet)
 * Use cover image as header and background as background.
 * Style content-status (Airing etc)
