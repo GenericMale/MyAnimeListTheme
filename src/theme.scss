@@ -102,6 +102,25 @@ body {
   background-position: top ($header-height+$status-menu-height) center;
 }
 
+input,
+select {
+  @include font;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-bottom: $text-border;
+  outline: none;
+  caret-color: $font-color;
+  color: $font-color;
+  -webkit-appearance: none;
+  appearance: none;
+
+  option {
+    color: #000;
+  }
+}
+
 .header {
   height: auto;
   width: 100%;
@@ -423,17 +442,6 @@ body {
 
         &.open {
           background: transparent;
-        }
-
-        input {
-          @include font;
-          background: transparent;
-          border: 0;
-          border-bottom: $text-border;
-          outline: none;
-          caret-color: $font-color;
-          color: $font-color;
-          height: $font-size;
         }
       }
 
@@ -782,6 +790,13 @@ body {
                 top: ($icon-size-l - $font-size)/2 - 2px; //move up 2px because the heart is a bit head heavy
                 right: 0;
                 width: $icon-size-l;
+                position: absolute;
+              }
+
+              select {
+                top: ($icon-size-l - $font-size)/2 - 2px;
+                right: $item-padding;
+                width: 20px;
                 position: absolute;
               }
             }
