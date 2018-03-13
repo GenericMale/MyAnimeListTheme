@@ -27,11 +27,13 @@ _Aired Dates_, _Start/End Dates_, _Storage_ and _Priority_. Don't forget to clic
 4. Set _Show cover image_ to _No_ and either set _Show background image_ to no or follow the steps outlined in *Custom Header Image* section to upload your own banner.
 5. Expand _Add Custom CSS_ and paste in the following code and click save:
 ```css
-@import url(https://malcat-gen.appspot.com/series?preset=dataimagelink);
-@import url(https://genericmale.github.io/MyAnimeListTheme/theme.css);
+@import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
+@import url('https://genericmale.github.io/MyAnimeListTheme/theme.css');
 ```
 
 More info can be found on [Beginner Tutorial](https://myanimelist.net/forum/?topicid=1499052).
+
+Note: it can take a few minutes until the high quality covers are generated.
 
 ### Custom Header Image
 
@@ -45,8 +47,8 @@ The default header provided with the theme has a size of 150px. To change the re
 use the following as _Custom CSS_ and change the pixel size to the height of your image:
 
 ```css
-@import url(https://malcat-gen.appspot.com/series?preset=dataimagelink);
-@import url(https://genericmale.github.io/MyAnimeListTheme/theme.css);
+@import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
+@import url('https://genericmale.github.io/MyAnimeListTheme/theme.css');
 
 .header {
   height: 300px
