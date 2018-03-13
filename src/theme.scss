@@ -508,7 +508,6 @@ body {
       position: absolute;
       margin-top: ($status-menu-height + $page-padding + $icon-size + $item-padding + ($font-size + $item-padding)*2) * -1;
       right: $page-padding;
-      z-index: -1;
     }
 
     .list-table {
