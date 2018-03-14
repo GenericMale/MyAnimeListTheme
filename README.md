@@ -18,7 +18,7 @@ This is my custom theme for MyAnimeList (MAL).
 
 ## Installation
 
-1. In your MAL Account Settings open the Tab _List Style Design_, select _Modern_, click on the _Default Theme_ and hit _Save_.
+1. In your MAL Account Settings open the Tab _List Style Design_, select _Modern_ on top, tick the _Anime_ and _Manga_ box below the _Default Theme_ and hit _Save_.
 2. Go to the _Lists_ tab and decide on which information to show. At least _Episodes_ and _Image_ is required. 
 Optional but highly recommended is _Score_, _Premiered_, _Type_ and _Rating_.
 Additionally the following fields will just give you additional sort options but the data is not shown in this theme:
