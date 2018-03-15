@@ -9,6 +9,7 @@ This is my custom theme for MyAnimeList (MAL).
 ## Features
 
 * Responsive
+* Supports anime and manga
 * Tested on Chrome, Firefox, IE11, Edge
 * Support for custom headers and backgrounds using the MAL image selectors
 * Uses MAL Modern Theme
@@ -76,8 +77,3 @@ To compile the project follow these steps:
 1. Install NodeJS and make sure `npm` is on your path.
 2. Switch to the directory with the _package.json_ and run `npm install`.
 3. Execute `npm run build`.
-
-## TODO
-
-* Show difference between chapters and volumes in manga list and fix height of status indicator
-* Improve variables used in sass file to enable easier extension and customization

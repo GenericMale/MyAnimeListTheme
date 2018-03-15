@@ -652,7 +652,8 @@ select {
               display: none;
 
               &.watching ~ .progress,
-              &.reading ~ .progress {
+              &.reading ~ .chapter,
+              &.reading ~ .volume {
                 background: $status-shadow, $watching-color;
 
                 &:before {
@@ -661,7 +662,8 @@ select {
               }
 
               &.plantowatch ~ .progress,
-              &.plantoread ~ .progress {
+              &.plantoread ~ .chapter,
+              &.plantoread ~ .volume {
                 background: $status-shadow, $planned-color;
 
                 &:before {
@@ -669,7 +671,9 @@ select {
                 }
               }
 
-              &.completed ~ .progress {
+              &.completed ~ .progress,
+              &.completed ~ .chapter,
+              &.completed ~ .volume {
                 background: $status-shadow, $completed-color;
 
                 &:before {
@@ -677,7 +681,9 @@ select {
                 }
               }
 
-              &.onhold ~ .progress {
+              &.onhold ~ .progress,
+              &.onhold ~ .chapter,
+              &.onhold ~ .volume {
                 background: $status-shadow, $on-hold-color;
 
                 &:before {
@@ -685,7 +691,9 @@ select {
                 }
               }
 
-              &.dropped ~ .progress {
+              &.dropped ~ .progress,
+              &.dropped ~ .chapter,
+              &.dropped ~ .volume {
                 background: $status-shadow, $dropped-color;
 
                 &:before {
@@ -885,8 +893,13 @@ select {
               }
             }
 
-            &.volume {
-              top: $icon-size + $item-padding*2;
+            &.chapter ~ .volume {
+              top: $icon-size + $item-padding*3;
+              border-top-right-radius: ($font-size + $item-padding*2)/2;
+
+              &:before {
+                opacity: 0;
+              }
             }
 
             &.rated,
@@ -932,10 +945,6 @@ select {
       }
     }
   }
-}
-
-.manga .list-container .list-unit .list-table .list-item .list-table-data .data.status {
-  height: ($icon-size + $item-padding)*2 + $item-padding;
 }
 
 #footer-block {
