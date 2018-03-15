@@ -50,7 +50,6 @@ $text-border: currentColor 1px solid;
 
 @font-face {
   font-family: 'AGRevueCyr Roman Medium';
-  font-weight: 100;
   src: local('AGRevueCyr Roman Medium'), local('AGRevueCyr-Roman-Medium'), url('./assets/AGRevueCyr.woff') format('woff');
 }
 
@@ -234,6 +233,7 @@ select {
     left: $page-padding;
     z-index: 1;
     font-family: 'AGRevueCyr Roman Medium', tahoma, verdana, arial, sans-serif;
+    font-weight: 100;
     font-size: 34px;
     width: auto;
     background-image: none;
