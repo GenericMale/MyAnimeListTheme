@@ -58,11 +58,11 @@ add the following to the end of the _Custom CSS_ and adapt the color codes:
 
 ```css
 .header, .icon-menu, #search-button, .stats, tbody:first-child {
-	color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 #copyright, #loading-spinner {
-	color: #808080;
+  color: #808080;
 }
 ```
 
