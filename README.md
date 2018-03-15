@@ -65,5 +65,4 @@ To compile the project follow these steps:
 ## TODO
 
 * Show difference between chapters and volumes in manga list and fix height of status indicator
-* Use css variables for customization
 * Improve variables used in sass file to enable easier extension and customization

@@ -102,7 +102,7 @@ body {
   background-position: top ($header-height+$status-menu-height) center;
 }
 
-input,
+input[type=text],
 select {
   @include font;
   background: transparent;
