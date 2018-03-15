@@ -46,7 +46,12 @@ $box-shadow: rgba(#000, 0.5) 1px 1px 2px;
 $text-shadow: #000 1px 1px 1px;
 $edit-shadow: #000 2px 2px 5px;
 
-$text-border: $font-color 1px solid;
+$text-border: currentColor 1px solid;
+
+@font-face {
+  font-family: 'AGRevueCyr Roman Medium';
+  src: local('AGRevueCyr Roman Medium'), local('AGRevueCyr-Roman-Medium'), url('./assets/AGRevueCyr.woff') format('woff');
+}
 
 @mixin fa($size: $icon-size) {
   display: inline-block;
@@ -70,6 +75,7 @@ $text-border: $font-color 1px solid;
   vertical-align: $v-align;
   height: $font-size + $item-padding;
   white-space: nowrap;
+  color: inherit;
 
   &:hover {
     text-decoration: underline;
@@ -80,7 +86,6 @@ $text-border: $font-color 1px solid;
   &:after {
     @include tooltip-placement($h-align, $v-align, $h-offset, $v-offset);
     content: $text;
-    color: $font-color;
     position: absolute;
     overflow: hidden;
     width: 0;
@@ -127,6 +132,7 @@ select {
   height: auto;
   width: 100%;
   position: absolute;
+  color: $font-color;
 
   .header-menu {
     position: relative;
@@ -140,6 +146,10 @@ select {
 
     .btn-menu {
       font-size: $font-size-l;
+
+      a {
+        color: inherit;
+      }
 
       #header-menu-button {
         font-weight: normal;
@@ -184,6 +194,7 @@ select {
       .icon-menu {
         width: $icon-size;
         height: $icon-size;
+        color: inherit;
 
         &:hover {
           background-color: transparent;
@@ -221,6 +232,12 @@ select {
     top: $page-padding;
     left: $page-padding;
     z-index: 1;
+    font-family: 'AGRevueCyr Roman Medium', tahoma, verdana, arial, sans-serif;
+    font-size: 32px;
+    width: auto;
+    background-image: none;
+    color: inherit;
+    text-indent: 0;
   }
 }
 
@@ -331,6 +348,7 @@ select {
           position: relative;
           top: 0;
           width: auto;
+          color: inherit;
 
           &:hover {
             text-decoration: underline;
@@ -484,14 +502,15 @@ select {
       .stats {
         line-height: normal;
         right: $page-padding + $icon-size + $icon-padding;
+        color: $font-color;
 
         a {
           margin-right: 0;
           margin-left: $icon-padding;
+          color: inherit;
 
           i {
             font-size: $icon-size;
-            color: $font-color;
             text-shadow: $text-shadow;
           }
         }
@@ -530,6 +549,7 @@ select {
         position: absolute;
         right: $page-padding;
         cursor: pointer;
+        color: $font-color;
 
         &:hover .list-table-header {
           width: 850px;
@@ -538,7 +558,6 @@ select {
 
         &:after {
           @include fa;
-          color: $font-color;
           content: $fa-var-sort;
           text-shadow: $text-shadow;
         }
@@ -575,7 +594,7 @@ select {
             .link {
               padding: 0 $text-padding;
               border-left: $text-border;
-              color: $font-color;
+              color: inherit;
               font-weight: normal;
               font-size: $font-size;
 

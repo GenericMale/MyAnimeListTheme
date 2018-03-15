@@ -51,6 +51,21 @@ use the following as _Custom CSS_ and change the pixel size to the height of you
 }
 ```
 
+### Change Header Icons and Footer Colors
+
+To change the colors of the icons shown in the header and the text in the footer,
+add the following to the end of the _Custom CSS_ and adapt the color codes:
+
+```css
+.header, .icon-menu, #search-button, .stats, tbody:first-child {
+	color: #ffffff !important;
+}
+
+#copyright, #loading-spinner {
+	color: #808080;
+}
+```
+
 ## Building
 
 This theme is developed using the Sass CSS precompiler. For more info go [sass-lang.com](https://sass-lang.com/)
