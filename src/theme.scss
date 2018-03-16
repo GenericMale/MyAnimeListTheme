@@ -13,6 +13,7 @@ $icon-size-l: 28px;
 $font-size: 13px;
 $font-size-m: 16px;
 $font-size-l: 18px;
+$font-size-xl: 34px;
 
 $item-padding: 3px;
 $page-padding: 10px;
@@ -23,6 +24,11 @@ $status-button-padding: 20px;
 $cover-width: 225px;
 $cover-height: 320px;
 $edit-size: 50px;
+
+//should be auto but exact pixels required for animation
+$tooltip-width: 100px;
+$settings-tooltip-width: 170px;
+$sort-tooltip-width: 850px;
 
 $background: hsl(240, 15%, 20%);
 $status-background: lighten($background, 10%);
@@ -101,7 +107,7 @@ $text-border: currentColor 1px solid;
   }
 
   &:hover::after {
-    width: 100px;
+    width: $tooltip-width;
     opacity: 1;
   }
 }
@@ -239,7 +245,7 @@ select {
     z-index: 1;
     font-family: 'AGRevueCyr Roman Medium', tahoma, verdana, arial, sans-serif;
     font-weight: 100;
-    font-size: 34px;
+    font-size: $font-size-xl;
     width: auto;
     background-image: none;
     color: inherit;
@@ -335,7 +341,7 @@ select {
       }
 
       &:hover .text {
-        width: 170px;
+        width: $settings-tooltip-width;
         height: $font-size + $item-padding + $icon-size;
         text-decoration: none;
         opacity: 1;
@@ -558,7 +564,7 @@ select {
         color: $font-color;
 
         &:hover .list-table-header {
-          width: 850px;
+          width: $sort-tooltip-width;
           opacity: 1;
         }
 
@@ -582,7 +588,7 @@ select {
           opacity: 0;
           text-align: right;
           overflow: hidden;
-          transition-property: opacity; //TODO: should be all but this will cause a ugly linebreak during the animation
+          transition-property: opacity; //TODO: should be width, opacity but this causes linebreak during animation
           transition-duration: 0.3s;
           transition-timing-function: ease-in-out;
 
