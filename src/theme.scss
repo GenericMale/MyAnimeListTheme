@@ -638,11 +638,13 @@ select {
         margin: $item-padding;
         box-shadow: $box-shadow;
 
+        transition: transform;
+        transition-duration: 0.1s;
+        transition-timing-function: ease-in-out;
+
         &:hover {
-          width: $cover-width + $item-padding * 6;
-          height: $cover-height + $item-padding * 6;
-          margin: $item-padding * 2 * -1;
           z-index: 2;
+          transform: scale(1.1);
 
           .list-table-data .data.title .add-edit-more,
           .list-table-data .data.progress .icon-add-episode,
