@@ -387,6 +387,7 @@ select {
     width: 100%;
     background: url($default-background) top / cover no-repeat;
     min-height: $header-height;
+    overflow: hidden;
 
     #cover-image-container {
       padding-top: 0;
@@ -394,7 +395,6 @@ select {
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
 
       .btn-list-setting {
         display: none;
@@ -402,6 +402,7 @@ select {
 
       #cover-image {
         max-width: none;
+        flex-shrink: 0;
       }
     }
   }
