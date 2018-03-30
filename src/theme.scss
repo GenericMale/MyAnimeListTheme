@@ -1,7 +1,17 @@
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]::after{background-image:url($series_image)}'); // sass-lint:disable-line max-line-length
 @import '../node_modules/font-awesome-sass/assets/stylesheets/font-awesome/variables';
+@import 'AGRevueCyr';
 
-$default-background: './assets/background.jpg';
+// sass-lint:disable no-color-literals
+$default-background: linear-gradient(to right,
+  hsl(270, 50%, 15%),
+  hsl(340, 85%, 70%),
+  hsl(0, 0%, 85%),
+  hsl(180, 50%, 50%),
+  hsl(270, 50%, 15%)
+) center / 2000px 100%;
+// sass-lint:enable no-color-literals
+
 $header-height: 150px;
 
 $min-width: 820px;
@@ -56,13 +66,6 @@ $text-shadow: $black 1px 1px 1px;
 $edit-shadow: $black 2px 2px 5px;
 
 $text-border: currentColor 1px solid;
-
-@font-face {
-  font-family: 'AGRevueCyr Roman Medium';
-  src: local('AGRevueCyr Roman Medium'),
-  local('AGRevueCyr-Roman-Medium'),
-  url('./assets/AGRevueCyr.woff') format('woff');
-}
 
 @mixin fa($size: $icon-size) {
   display: inline-block;
@@ -385,7 +388,7 @@ select {
 
   .cover-block {
     width: 100%;
-    background: url($default-background) top / cover no-repeat;
+    background: $default-background;
     min-height: $header-height;
     overflow: hidden;
 

@@ -4,7 +4,7 @@
   "description": "Custom Theme for MyAnimeList",
   "main": "theme.scss",
   "scripts": {
-    "build": "sass-lint -v -q && node-sass --output-style compressed -o docs src"
+    "build": "sass-lint -v -q && node-sass --output-style compressed -o docs src/theme.scss"
   },
   "repository": {
     "type": "git",
