@@ -67,6 +67,13 @@ $edit-shadow: $black 2px 2px 5px;
 
 $text-border: currentColor 1px solid;
 
+@font-face {
+  font-family: 'AGRevueCyr Roman Medium';
+  src: local('AGRevueCyr Roman Medium'),
+  local('AGRevueCyr-Roman-Medium'),
+  url('data:application/x-font-woff;charset=utf-8;base64,' + $font-base64) format('woff');
+}
+
 @mixin fa($size: $icon-size) {
   display: inline-block;
   font: normal normal normal #{$size} / 1 FontAwesome;
