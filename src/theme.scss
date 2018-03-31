@@ -1,6 +1,5 @@
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]::after{background-image:url($series_image)}'); // sass-lint:disable-line max-line-length
 @import '../node_modules/font-awesome-sass/assets/stylesheets/font-awesome/variables';
-@import 'AGRevueCyr';
 
 // sass-lint:disable no-color-literals
 $default-background: linear-gradient(to right,
@@ -66,13 +65,6 @@ $text-shadow: $black 1px 1px 1px;
 $edit-shadow: $black 2px 2px 5px;
 
 $text-border: currentColor 1px solid;
-
-@font-face {
-  font-family: 'AGRevueCyr Roman Medium';
-  src: local('AGRevueCyr Roman Medium'),
-  local('AGRevueCyr-Roman-Medium'),
-  url('data:application/x-font-woff;charset=utf-8;base64,' + $font-base64) format('woff');
-}
 
 @mixin fa($size: $icon-size) {
   display: inline-block;
@@ -253,8 +245,6 @@ select {
     top: $page-padding;
     left: $page-padding;
     z-index: 1;
-    font-family: 'AGRevueCyr Roman Medium', tahoma, verdana, arial, sans-serif;
-    font-weight: 100;
     font-size: $font-size-xl;
     width: auto;
     background-image: none;
