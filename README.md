@@ -58,8 +58,8 @@ To change the colors of the icons shown in the header and the text in the footer
 add the following to the end of the _Custom CSS_ and adapt the color codes:
 
 ```css
-.header, .icon-menu, #search-button, .stats, tbody:first-child {
-  color: #ffffff !important;
+.header, .list-menu-float, .search-container, .stats, .list-stats, tbody:first-child {
+  color: #ffffff;
 }
 
 #copyright, #loading-spinner {

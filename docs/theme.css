@@ -10,6 +10,7 @@
 .list-menu-float,
 .search-container,
 .stats,
+.list-stats,
 tbody:first-child {
   color: #fff;
 }
