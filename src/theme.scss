@@ -89,10 +89,6 @@ $text-border: currentColor 1px solid;
   height: $font-size + $item-padding;
   white-space: nowrap;
   color: inherit;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 @mixin tooltip($text, $h-align: left, $v-align: top, $h-offset: 0, $v-offset: 0) {
