@@ -62,7 +62,6 @@ $score-color: saturate($dropped-color, 25%);
 $status-shadow: linear-gradient(125deg, transparent 60%, rgba($black, 0.5));
 $box-shadow: rgba($black, 0.5) 1px 1px 2px;
 $text-shadow: $black 1px 1px 1px;
-$edit-shadow: $black 2px 2px 5px;
 
 $text-border: currentColor 1px solid;
 
@@ -671,14 +670,15 @@ select {
         transition-timing-function: ease-in-out;
 
         &:hover {
-          z-index: 2;
-          transform: scale(1.1);
-
           .list-table-data .data.title .add-edit-more,
           .list-table-data .data.progress .icon-add-episode,
           .list-table-data .data.chapter .icon-add-chapter,
           .list-table-data .data.volume .icon-add-volume {
             display: block;
+          }
+
+          .list-table-data .data.image::after {
+            background: linear-gradient(rgba($black, 0), rgba($black, 0.9));
           }
         }
 
@@ -814,13 +814,6 @@ select {
 
                 .edit,
                 .add {
-                  background-color: rgba($black, 0.7);
-                  border-radius: $edit-size / 2;
-                  width: $edit-size;
-                  height: $edit-size;
-                  display: inline-block;
-                  box-shadow: $edit-shadow;
-
                   a {
                     &:hover {
                       text-decoration: none;
@@ -828,6 +821,7 @@ select {
 
                     &::before {
                       @include fa($icon-size-l);
+                      text-shadow: $text-shadow;
                       color: $font-color;
                       margin: ($edit-size - $icon-size-l) / 2;
                     }

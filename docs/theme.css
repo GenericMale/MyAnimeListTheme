@@ -640,16 +640,15 @@ select option {
   transition-timing-function: ease-in-out;
 }
 
-.list-container .list-unit .list-table .list-item:hover {
-  z-index: 2;
-  transform: scale(1.1);
-}
-
 .list-container .list-unit .list-table .list-item:hover .list-table-data .data.title .add-edit-more,
 .list-container .list-unit .list-table .list-item:hover .list-table-data .data.progress .icon-add-episode,
 .list-container .list-unit .list-table .list-item:hover .list-table-data .data.chapter .icon-add-chapter,
 .list-container .list-unit .list-table .list-item:hover .list-table-data .data.volume .icon-add-volume {
   display: block;
+}
+
+.list-container .list-unit .list-table .list-item:hover .list-table-data .data.image::after {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
 }
 
 .list-container .list-unit .list-table .list-item .list-table-data .data {
@@ -793,16 +792,6 @@ select option {
   bottom: 110px;
 }
 
-.list-container .list-unit .list-table .list-item .list-table-data .data.title .add-edit-more .edit,
-.list-container .list-unit .list-table .list-item .list-table-data .data.title .add-edit-more .add {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 25px;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  box-shadow: #000 2px 2px 5px;
-}
-
 .list-container .list-unit .list-table .list-item .list-table-data .data.title .add-edit-more .edit a:hover,
 .list-container .list-unit .list-table .list-item .list-table-data .data.title .add-edit-more .add a:hover {
   text-decoration: none;
@@ -815,6 +804,7 @@ select option {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: auto;
+  text-shadow: #000 1px 1px 1px;
   color: #fff;
   margin: 11px;
 }
