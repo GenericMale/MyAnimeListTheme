@@ -1,5 +1,27 @@
 @charset "UTF-8";
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]::after{background-image:url($series_image)}');
+.header .header-menu .header-info a:last-child::after, .header .header-menu .list-menu .icon-menu.manga-list::after, .header .header-menu .list-menu .icon-menu.anime-list::after, .list-menu-float .icon-menu.profile::after, .list-menu-float .icon-menu .text, .list-container .status-menu-container .search-container #search-button::after, .list-container .list-unit .list-status-title .stats #show-stats-button::after, .list-container .list-unit .list-status-title .stats #advanced-options-button::after {
+  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
+  height: 16px;
+  white-space: nowrap;
+  color: inherit;
+}
+
+.header .header-menu .header-info a:last-child::after, .header .header-menu .list-menu .icon-menu.manga-list::after, .header .header-menu .list-menu .icon-menu.anime-list::after, .list-menu-float .icon-menu.profile::after, .list-container .status-menu-container .search-container #search-button::after, .list-container .list-unit .list-status-title .stats #show-stats-button::after, .list-container .list-unit .list-status-title .stats #advanced-options-button::after {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  transition-property: width, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.header .header-menu .header-info a:last-child:hover::after, .header .header-menu .list-menu .icon-menu.manga-list:hover::after, .header .header-menu .list-menu .icon-menu.anime-list:hover::after, .list-menu-float .icon-menu.profile:hover::after, .list-container .status-menu-container .search-container #search-button:hover::after, .list-container .list-unit .list-status-title .stats #show-stats-button:hover::after, .list-container .list-unit .list-status-title .stats #advanced-options-button:hover::after {
+  width: 100px;
+  opacity: 1;
+}
+
 body {
   font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   background-color: #2b2b3b;
@@ -77,29 +99,13 @@ select option {
 }
 
 .header .header-menu .header-info a:last-child::after {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   right: 17px;
   bottom: 0;
   margin-bottom: -19px;
   padding-bottom: 3px;
   text-align: right;
   vertical-align: bottom;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
   content: "History";
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  opacity: 0;
-  transition-property: width, opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-.header .header-menu .header-info a:last-child:hover::after {
-  width: 100px;
-  opacity: 1;
 }
 
 .header .header-menu .header-info a:last-child .fa {
@@ -133,29 +139,13 @@ select option {
 }
 
 .header .header-menu .list-menu .icon-menu.manga-list::after {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   right: 0;
   bottom: 0;
   margin-bottom: -19px;
   padding-bottom: 3px;
   text-align: right;
   vertical-align: bottom;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
   content: "Manga List";
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  opacity: 0;
-  transition-property: width, opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-.header .header-menu .list-menu .icon-menu.manga-list:hover::after {
-  width: 100px;
-  opacity: 1;
 }
 
 .header .header-menu .list-menu .icon-menu.manga-list::before {
@@ -169,29 +159,13 @@ select option {
 }
 
 .header .header-menu .list-menu .icon-menu.anime-list::after {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   right: 0;
   bottom: 0;
   margin-bottom: -19px;
   padding-bottom: 3px;
   text-align: right;
   vertical-align: bottom;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
   content: "Anime List";
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  opacity: 0;
-  transition-property: width, opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-.header .header-menu .list-menu .icon-menu.anime-list:hover::after {
-  width: 100px;
-  opacity: 1;
 }
 
 .header .header-menu .list-menu .icon-menu.anime-list::before {
@@ -251,29 +225,13 @@ select option {
 }
 
 .list-menu-float .icon-menu.profile::after {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   left: 0;
   top: 0;
   margin-top: -19px;
   padding-top: 3px;
   text-align: left;
   vertical-align: top;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
   content: "Profile";
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  opacity: 0;
-  transition-property: width, opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-.list-menu-float .icon-menu.profile:hover::after {
-  width: 100px;
-  opacity: 1;
 }
 
 .list-menu-float .icon-menu.profile::before {
@@ -281,16 +239,12 @@ select option {
 }
 
 .list-menu-float .icon-menu .text {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   left: 0;
   top: 0;
   margin-top: -19px;
   padding-top: 3px;
   text-align: left;
   vertical-align: top;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
 }
 
 .list-menu-float .icon-menu svg.icon {
@@ -485,29 +439,13 @@ select option {
 }
 
 .list-container .status-menu-container .search-container #search-button::after {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   right: 0;
   top: 0;
   margin-top: -19px;
   padding-top: 3px;
   text-align: right;
   vertical-align: top;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
   content: "Search";
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  opacity: 0;
-  transition-property: width, opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-.list-container .status-menu-container .search-container #search-button:hover::after {
-  width: 100px;
-  opacity: 1;
 }
 
 .list-container .status-menu-container .search-container #search-button i {
@@ -554,55 +492,23 @@ select option {
 }
 
 .list-container .list-unit .list-status-title .stats #show-stats-button::after {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   right: 29px;
   top: 0;
   margin-top: -19px;
   padding-top: 3px;
   text-align: right;
   vertical-align: top;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
   content: "Statistics";
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  opacity: 0;
-  transition-property: width, opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-.list-container .list-unit .list-status-title .stats #show-stats-button:hover::after {
-  width: 100px;
-  opacity: 1;
 }
 
 .list-container .list-unit .list-status-title .stats #advanced-options-button::after {
-  font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   right: 0;
   top: 0;
   margin-top: -19px;
   padding-top: 3px;
   text-align: right;
   vertical-align: top;
-  height: 16px;
-  white-space: nowrap;
-  color: inherit;
   content: "Filter";
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  opacity: 0;
-  transition-property: width, opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-.list-container .list-unit .list-status-title .stats #advanced-options-button:hover::after {
-  width: 100px;
-  opacity: 1;
 }
 
 .list-container .list-unit .list-status-title .text {
@@ -988,7 +894,6 @@ select option {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: auto;
-  display: inline-block;
   color: rgba(255, 255, 255, 0.5);
   margin-right: 6px;
 }

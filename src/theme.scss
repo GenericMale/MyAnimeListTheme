@@ -78,23 +78,25 @@ $text-border: currentColor 1px solid;
   font: normal normal normal #{$size} / 1 tahoma, verdana, arial, sans-serif;
 }
 
-@mixin tooltip-placement($h-align: left, $v-align: top, $h-offset: 0, $v-offset: 0) {
+%tooltip-placement {
   @include font;
+  height: $font-size + $item-padding;
+  white-space: nowrap;
+  color: inherit;
+}
+
+@mixin tooltip-placement($h-align: left, $v-align: top, $h-offset: 0, $v-offset: 0) {
+  @extend %tooltip-placement;
   #{$h-align}: $h-offset;
   #{$v-align}: $v-offset;
   margin-#{$v-align}: ($font-size + $item-padding * 2) * -1;
   padding-#{$v-align}: $item-padding;
   text-align: $h-align;
   vertical-align: $v-align;
-  height: $font-size + $item-padding;
-  white-space: nowrap;
-  color: inherit;
 }
 
-@mixin tooltip($text, $h-align: left, $v-align: top, $h-offset: 0, $v-offset: 0) {
+%tooltip {
   &::after {
-    @include tooltip-placement($h-align, $v-align, $h-offset, $v-offset);
-    content: $text;
     position: absolute;
     overflow: hidden;
     width: 0;
@@ -107,6 +109,15 @@ $text-border: currentColor 1px solid;
   &:hover::after {
     width: $tooltip-width;
     opacity: 1;
+  }
+}
+
+@mixin tooltip($text, $h-align: left, $v-align: top, $h-offset: 0, $v-offset: 0) {
+  @extend %tooltip;
+
+  &::after {
+    @include tooltip-placement($h-align, $v-align, $h-offset, $v-offset);
+    content: $text;
   }
 }
 
@@ -893,7 +904,6 @@ select {
 
               &::before {
                 @include fa;
-                display: inline-block;
                 color: rgba($font-color, 0.5);
                 margin-right: $item-padding * 2;
               }
