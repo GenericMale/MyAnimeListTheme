@@ -1,5 +1,25 @@
 @charset "UTF-8";
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]::after{background-image:url($series_image)}');
+/* Header Height */
+.list-menu-float {
+  top: 150px;
+}
+
+/* Header Font Color */
+.header,
+.list-menu-float,
+.search-container,
+.stats,
+tbody:first-child {
+  color: #fff;
+}
+
+/* Footer Font Color */
+#copyright,
+#loading-spinner {
+  color: gray;
+}
+
 .header .header-menu .header-info a:last-child::after, .header .header-menu .list-menu .icon-menu.manga-list::after, .header .header-menu .list-menu .icon-menu.anime-list::after, .list-menu-float .icon-menu.profile::after, .list-menu-float .icon-menu .text, .list-container .status-menu-container .search-container #search-button::after, .list-container .list-unit .list-status-title .stats #show-stats-button::after, .list-container .list-unit .list-status-title .stats #advanced-options-button::after {
   font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
   height: 16px;
@@ -53,7 +73,6 @@ select option {
   height: auto;
   width: 100%;
   position: absolute;
-  color: #fff;
 }
 
 .header .header-menu {
@@ -92,6 +111,10 @@ select option {
   font-size: 13px;
   margin-top: 3px;
   margin-right: 17px;
+}
+
+.header .header-menu .header-info a {
+  color: inherit;
 }
 
 .header .header-menu .header-info a:last-child {
@@ -155,7 +178,6 @@ select option {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: auto;
   content: "";
-  color: #fff;
 }
 
 .header .header-menu .list-menu .icon-menu.anime-list::after {
@@ -175,7 +197,6 @@ select option {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: auto;
   content: "";
-  color: #fff;
 }
 
 .header .header-title {
@@ -199,7 +220,6 @@ select option {
   float: left;
   user-select: none;
   font-size: 0;
-  top: 150px;
 }
 
 .list-menu-float form {
@@ -212,7 +232,7 @@ select option {
   width: 14px;
   height: 14px;
   margin-right: 15px;
-  color: #fff;
+  color: inherit;
 }
 
 .list-menu-float .icon-menu:not(.profile):hover {
@@ -432,7 +452,7 @@ select option {
 }
 
 .list-container .status-menu-container .search-container #search-button {
-  color: #fff;
+  color: inherit;
   font-size: 14px;
   height: 14px;
   margin: 0;
@@ -477,7 +497,6 @@ select option {
 .list-container .list-unit .list-status-title .stats {
   line-height: normal;
   right: 39px;
-  color: #fff;
 }
 
 .list-container .list-unit .list-status-title .stats a {
@@ -536,7 +555,6 @@ select option {
   position: absolute;
   right: 10px;
   cursor: pointer;
-  color: #fff;
 }
 
 .list-container .list-unit .list-table tbody:first-child:hover .list-table-header {
@@ -582,7 +600,7 @@ select option {
 }
 
 .list-container .list-unit .list-table tbody:first-child .list-table-header .header-title .sort-icon {
-  color: #fff;
+  color: inherit;
 }
 
 .list-container .list-unit .list-table tbody:first-child .list-table-header .header-title .link {
@@ -966,9 +984,4 @@ select option {
 
 #copyright {
   font: normal normal normal 13px / 1 tahoma, verdana, arial, sans-serif;
-  color: gray;
-}
-
-#loading-spinner {
-  color: gray;
 }

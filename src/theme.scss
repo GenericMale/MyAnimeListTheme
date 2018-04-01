@@ -66,6 +66,27 @@ $edit-shadow: $black 2px 2px 5px;
 
 $text-border: currentColor 1px solid;
 
+
+/* Header Height */
+.list-menu-float {
+  top: $header-height;
+}
+
+/* Header Font Color */
+.header,
+.list-menu-float,
+.search-container,
+.stats,
+tbody:first-child {
+  color: $font-color;
+}
+
+/* Footer Font Color */
+#copyright,
+#loading-spinner {
+  color: $font-color-3;
+}
+
 @mixin fa($size: $icon-size) {
   display: inline-block;
   font: normal normal normal #{$size} / 1 FontAwesome;
@@ -152,7 +173,6 @@ select {
   height: auto;
   width: 100%;
   position: absolute;
-  color: $font-color;
 
   .header-menu {
     position: relative;
@@ -191,12 +211,16 @@ select {
       margin-top: $item-padding;
       margin-right: $icon-size + $item-padding;
 
-      a:last-child {
-        @include tooltip('History', right, bottom, $icon-size + $item-padding);
-        font-size: 0;
+      a {
+        color: inherit;
 
-        .fa {
-          font-size: $icon-size;
+        &:last-child {
+          @include tooltip('History', right, bottom, $icon-size + $item-padding);
+          font-size: 0;
+
+          .fa {
+            font-size: $icon-size;
+          }
         }
       }
     }
@@ -231,7 +255,6 @@ select {
           &::before {
             @include fa;
             content: $fa-var-book;
-            color: $font-color;
           }
         }
 
@@ -241,7 +264,6 @@ select {
           &::before {
             @include fa;
             content: $fa-var-film;
-            color: $font-color;
           }
         }
       }
@@ -260,7 +282,7 @@ select {
   }
 }
 
-.list-menu-float {
+.list-menu-float { // sass-lint:disable-line no-mergeable-selectors
   position: relative;
   width: auto;
   border: 0;
@@ -270,7 +292,6 @@ select {
   float: left;
   user-select: none;
   font-size: 0;
-  top: $header-height;
 
   form {
     display: inline-block;
@@ -282,7 +303,7 @@ select {
     width: $icon-size;
     height: $icon-size;
     margin-right: $icon-padding;
-    color: $font-color;
+    color: inherit;
 
     &:not(.profile):hover {
       background-color: transparent;
@@ -484,7 +505,7 @@ select {
 
       #search-button {
         @include tooltip('Search', right);
-        color: $font-color;
+        color: inherit;
         font-size: $icon-size;
         height: $icon-size;
         margin: 0;
@@ -519,7 +540,6 @@ select {
       .stats {
         line-height: normal;
         right: $page-padding + $icon-size + $icon-padding;
-        color: $font-color;
 
         a {
           margin-right: 0;
@@ -569,7 +589,6 @@ select {
         position: absolute;
         right: $page-padding;
         cursor: pointer;
-        color: $font-color;
 
         &:hover .list-table-header {
           width: $sort-tooltip-width;
@@ -608,7 +627,7 @@ select {
             display: inline-block;
 
             .sort-icon {
-              color: $font-color;
+              color: inherit;
             }
 
             .link {
@@ -984,9 +1003,4 @@ select {
 
 #copyright {
   @include font;
-  color: $font-color-3;
-}
-
-#loading-spinner {
-  color: $font-color-3;
 }
