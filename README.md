@@ -25,7 +25,7 @@ Optional but highly recommended is _Score_, _Premiered_, _Type_ and _Rating_.
 Additionally the following fields will just give you additional sort options but the data is not shown in this theme:
 _Aired Dates_, _Start/End Dates_, _Storage_ and _Priority_. Don't forget to click the _Submit_ button!
 3. Go to _List Style Design_ again and click on the preview image of the _Default Theme_.
-4. Set _Show cover image_ to _No_ and either set _Show background image_ to no or follow the steps outlined in *Custom Header Image* section to upload your own banner.
+4. Set _Show cover image_ to _No_ or follow the steps outlined in *Custom Banner* section to upload your own banner.
 5. Expand _Add Custom CSS_ and paste in the following code and click save:
 ```css
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
@@ -36,12 +36,12 @@ More info can be found on [Beginner Tutorial](https://myanimelist.net/forum/?top
 
 Note: it can take a few minutes until the high quality covers are generated.
 
-### Custom Header Image
+### Custom Banner
 
-To use a custom header image, just upload it as cover image on the _Customize Default Theme_ page.
+To use a custom banner, just upload it as cover image on the _Customize Default Theme_ page.
 
-The default header provided with the theme has a size of 150px. To align all icons with the custom header, 
-use the following as _Custom CSS_ and change the pixel size to the height of your header image:
+The default banner provided with the theme has a height of 150px. To align all icons with your banner, 
+use the following as _Custom CSS_ and change the pixel size to the height of your image:
 
 ```css
 @import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
@@ -51,6 +51,8 @@ use the following as _Custom CSS_ and change the pixel size to the height of you
   top: 150px
 }
 ```
+
+Make sure your banner is wide enough for most screen sizes (ideally >1920px wide).
 
 ### Change Header Icons and Footer Colors
 
