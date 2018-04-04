@@ -540,7 +540,7 @@ select option {
   background-color: transparent;
   width: auto;
   position: absolute;
-  margin-top: -99px;
+  margin-top: -99px !important;
   right: 10px;
 }
 

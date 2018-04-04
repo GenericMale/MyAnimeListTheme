@@ -1,7 +1,7 @@
-@import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]::after{background-image:url($series_image)}'); // sass-lint:disable-line max-line-length
+@import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]::after{background-image:url($series_image)}'); //sass-lint:disable-line max-line-length
 @import '../node_modules/font-awesome-sass/assets/stylesheets/font-awesome/variables';
 
-// sass-lint:disable no-color-literals
+//sass-lint:disable no-color-literals
 $default-background: linear-gradient(to right,
   hsl(270, 50%, 15%),
   hsl(340, 85%, 70%),
@@ -9,7 +9,7 @@ $default-background: linear-gradient(to right,
   hsl(180, 50%, 50%),
   hsl(270, 50%, 15%)
 ) center / 2000px 100%;
-// sass-lint:enable no-color-literals
+//sass-lint:enable no-color-literals
 
 $header-height: 150px;
 
@@ -226,7 +226,7 @@ select {
     }
 
     .list-menu {
-      display: block !important;  // sass-lint:disable-line no-important
+      display: block !important;  //sass-lint:disable-line no-important
       top: $font-size-l + $item-padding;
       right: 0;
       background-color: transparent;
@@ -282,7 +282,7 @@ select {
   }
 }
 
-.list-menu-float { // sass-lint:disable-line no-mergeable-selectors
+.list-menu-float { //sass-lint:disable-line no-mergeable-selectors
   position: relative;
   width: auto;
   border: 0;
@@ -312,7 +312,7 @@ select {
 
     &.profile {
       @include tooltip('Profile');
-      background-image: none !important;  // sass-lint:disable-line no-important
+      background-image: none !important;  //sass-lint:disable-line no-important
 
       &::before {
         content: $fa-var-user;
@@ -574,7 +574,7 @@ select {
       margin-top: (
         $status-menu-height + $page-padding +
         $icon-size + $item-padding +
-        ($font-size + $item-padding) * 2) * -1;
+        ($font-size + $item-padding) * 2) * -1 !important; //sass-lint:disable-line no-important
       right: $page-padding;
     }
 
