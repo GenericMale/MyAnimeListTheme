@@ -28,8 +28,9 @@ _Aired Dates_, _Start/End Dates_, _Storage_ and _Priority_. Don't forget to clic
 4. Set _Show cover image_ to _No_ or follow the steps outlined in *Custom Banner* section to upload your own banner.
 5. Expand _Add Custom CSS_ and paste in the following code and click save:
 ```css
-@import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
-@import url('https://genericmale.github.io/MyAnimeListTheme/theme.css');
+@\import "https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}";
+@\import "https://malscraper.azurewebsites.net/covers/auto/presets/dataimagelinkafter";
+@\import "https://genericmale.github.io/MyAnimeListTheme/theme.css";
 ```
 
 More info can be found on [Beginner Tutorial](https://myanimelist.net/forum/?topicid=1499052).
@@ -44,8 +45,9 @@ The default banner provided with the theme has a height of 150px. To align all i
 use the following as _Custom CSS_ and change the pixel size to the height of your image:
 
 ```css
-@import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}');
-@import url('https://genericmale.github.io/MyAnimeListTheme/theme.css');
+@\import "https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}";
+@\import "https://malscraper.azurewebsites.net/covers/auto/presets/dataimagelinkafter";
+@\import "https://genericmale.github.io/MyAnimeListTheme/theme.css";
 
 .list-menu-float {
   top: 150px
