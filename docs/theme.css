@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url('https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]::after{background-image:url($series_image)}');
+@\import 'https://malcat-gen.appspot.com/series?template=.data.image a[href^="/$list/$id/"]:after{background-image:url($series_image)}';
+@\import 'https://malscraper.azurewebsites.net/covers/auto/presets/dataimagelinkafter';
 /* Header Height */
 .list-menu-float {
   top: 150px;
